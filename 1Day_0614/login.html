@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/* 
+태그 선택자
+클래스 선택자 : 특성 클래스를 가진 요소(태그)를 선택함, 중복가능 . 으로 시작함
+선택방법 : . 클래스 이름
+border : 바깥 테두리
+width : 영역의크기
+padding : 안쪽 여백
+margin : 여백 같게함
+*/
+
+ .wrap{
+    width: 400px;
+    padding: 20px;
+    margin: 0 auto; 
+    border: 1px solid black;
+
+ }
+ .img_wrap{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border: 1px solid black;
+ }
+ .info_wrap{
+    width: 300px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 1px solid black;
+ }
+
+ input{
+    width: 97%;
+    height: 30px;
+    margin-top: 5px;
+ }
+ button{
+    width: 100%;
+    margin-top: 10px;
+    height: 40px;
+    border: 0px;
+    border-radius: 5px;
+    background-color: pink;
+
+ }
+
+ img{
+    width: 200px;
+    height: 200px;
+
+ }
+    </style>
+</head>
+<body>
+    
+
+    <h2> 공간태그 : div </h2>
+
+<!-- 공간을 만들 때 사용하는 태그-->
+     <!--전체영역-->   
+     <div class="wrap">
+<!--로그인 이미지영역-->
+        <div class="img_wrap">
+            <img src="./다운로드2.jpg">        
+    </div>
+        <!--로그인 정보 영역-->
+     
+         <div class="info_wrap">
+            <input type="text" placeholder="ID">
+            <input type="text" placeholder="PASSWORD">
+            <button>로그인</button>     
+         </div>
+    </div>
+</body>
+</html>
