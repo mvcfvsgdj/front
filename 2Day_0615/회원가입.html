@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        table{
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+        }
+
+        td{
+            border: 1px solid black;
+            width: 300px;
+        }
+
+        td:nth-child(1){
+            border:0px;
+        }
+        td:nth-child(){
+            border: 1px;
+        }
+        tfoot{
+            width: 200px;
+            border: 1px solid black;
+            text-align: center;
+            background-color: aliceblue;
+        }
+       
+                </style>
+</head>
+<body>
+
+    <table>
+        <thead></thead>
+        <tr>
+            <td colspan="6">이름</td>
+            <td> <input text="내용"><br></td>
+        </tr>
+        <tr>
+            <td colspan="6">아이디</td>
+            <td> <input text="내용"><br></td>
+        </tr>
+        <tr>
+            <td colspan="6">비밀번호</td>
+            <td> <input text="내용"><br></td>
+        </tr>
+        <tr>
+            <td colspan="6">비밀번호확인</td>
+            <td> <input text="내용"><br></td>
+        </tr>
+        <tr>
+            <td colspan="6">이메일</td>
+            <td> <input text="내용"><br>@ <input text="내용"><br></td>
+        </tr>
+        <tr>
+            <td colspan="6">학년/반</td>
+            <td><select>
+                <option></option>
+            </select>학년<select>
+                <option></option>
+            </select>반</td>
+        </tr>
+    </thead>
+        <tfoot>
+            <tr>
+                <td colspan="6">
+                    <button>가입</button>
+                    <button>취소</button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    
+</body>
+</html>

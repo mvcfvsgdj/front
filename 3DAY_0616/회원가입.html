@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   <style>
+
+
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        table{
+            width: 800px;   
+            height: 400px;       
+            border:1px solid black;
+            border-collapse: collapse;
+            margin: 50px auto;   /* 상하 ,  좌우 */
+
+        }
+
+        td{           
+            border:1px solid black;
+            padding-left: 10px;
+        }
+
+    
+        td:nth-child(1){
+            width: 100px;
+            text-align: center;
+        }
+
+
+        table  input , table  select{
+            width: 150px;
+            height: 30px;
+        }
+
+        .password{
+            font-size: 12px;
+            color: red;
+        }
+
+        th{
+            background-color: aqua;
+        }
+      
+
+
+   </style>
+</head>
+<body>
+
+    <!-- 회원가입-->
+    
+
+    <table>
+        <caption> 회원가입</caption>
+
+        <tr>
+            <th>이름</th>
+            <td><input type="text"></td>
+        </tr>
+
+        <tr>
+            <th>아이디</th>
+            <td><input type="text"></td>
+        </tr>
+
+        <tr>
+            <th>비밀번호</th>
+            <td><input type="text"> <button>중복확인</button></td>
+        </tr>
+
+        <tr>
+            <th>비밀번호확인</th>
+            <td><input type="text">
+                <p class="password"> 비밀번호는 4자리 이상이어야 한다. </p>
+            </td>
+         
+        </tr>
+
+        <tr>
+            <th>이메일</th>
+            <td>
+                 <input type="text">@<input type="text"> 
+                 <select>
+                     <option value=""></option>
+                     <option value=""></option>
+                     <option value=""></option>
+                     <option value=""></option>
+                 </select>
+                 <button>이메일중복확인</button>
+             </td>
+        </tr>
+
+        <tr>
+            <th>학년/반</th>
+            <td>
+                학년
+                <select>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>                  
+                </select>
+                반
+                <select>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>                  
+                </select>
+
+            </td>
+        </tr>
+
+        <tr>           
+            <td colspan="2">
+                <button>가입</button>
+                <button>취소</button>
+            </td>
+        </tr>
+    </table>
+
+ 
+
+</body>
+</html>

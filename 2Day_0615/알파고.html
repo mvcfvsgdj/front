@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+    
+        .wrap {
+            border: 3px solid #333;
+            width: 500px;
+            padding: 20px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+    
+        .img_wrap {
+            border: 1px solid #333;
+            width: 300px;
+            height: 300px;
+            padding: 20px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background-image: url(https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=848e0c78-0595-4cee-b9b7-f17c17992e9e);
+            background-size: cover;
+            background-position: center;
+        }
+    
+        .info_wrap {
+            margin: 0 auto;
+            width: 300px;
+            padding: 20px;
+        }
+    
+        input, select {
+            height: 30px;
+            width: 100%;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            padding: 0 5px;
+            border: 1px solid #333;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+    
+        button {
+            width: 100%;
+            height: 30px;
+            padding: 0;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+    
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+    
+        p {
+            margin-bottom: 5px;
+            color: #333;
+        }
+    
+        .price {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="img_wrap"></div>
+        <div class="info_wrap">
+            <h2>대관령 황태</h2>
+            <p>겨울 내내 녹았다 얼었다를 반복한 맛 좋은 대관령 황태입니다.</p>
+            <p><strong>가격: <span class="price">30,000원</span>/10마리</strong></p>
+        </div>
+        
+        <div class="info_wrap">
+            <p>-- 주문내역 --</p>
+            <p>주문자 이름</p>
+            <input type="text" placeholder="이름을 입력하세요">
+            <p>수량</p>
+            <select>
+                <option disabled selected>수량을 선택하세요</option>
+                <option>10</option>
+                <option>20</option>
+                <option>30</option>
+                <option>40</option>
+            </select>
+            <p>주문금액</p>
+            <input type="text" placeholder="주문금액을 입력하세요">
+            <p>전화번호</p>
+            <input type="text" placeholder="전화번호를 입력하세요">
+            <button>Order</button>
+        </div>  
+    </div>
+</body>
+</html>
