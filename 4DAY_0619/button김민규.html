@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .main {
+            border: 1px solid 0black;
+            width: 700px;
+            height: 500px;
+            display: inline-block;
+            position: relative;
+
+
+
+        }
+
+        .button {
+            position: absolute;
+            display: inline-block;
+
+        }
+
+        .out:hover {
+
+            top: 60px;
+            right: 350px;
+        }
+
+        .out {
+            right: 50px;
+            top: 350px;
+
+        }
+
+        .buy {
+            top: 350px;
+            right: 106px;
+        }
+
+        .pay {
+            position: absolute;
+
+            top: 240px;
+
+        }
+
+        .theft {
+            position: absolute;
+            top: 258px;
+            right: 30px
+        }
+
+        img {
+            position: absolute;
+            right: 30px;
+
+            height: 120px;
+
+        }
+
+        .theft2 {
+            position: absolute;
+            top: 258px;
+            right: 210px
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2> div 사용 나의 버튼만들기 </h2>
+
+    <div class="main">
+
+
+        <div class="woori">
+            <h2> 우리 1002 150 549661 계좌번호에 돈을 보내시겠습니까?</h2>
+        </div>
+        <br><br>
+
+        <div><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTZDI5TFabA4Tk4jYE0ev1rN059NVWY1GdOBuc_Fwheg&s"
+                alt=""></div>
+        <div class="pay">
+            <p>금액 : 1,200,000 원 </p>
+        </div>
+        <div class="button out"><button>나가기</button></div>
+        <div class="button buy"><button>송금하기</button></div>
+        <div class="theft"><input type="checkbox">매주 월요일 자동이체</div>
+        <div class="theft2"><input type="checkbox">현금영수증 신청(소득공제용)</div>
+
+
+
+    </div>
+
+</body>
+
+</html>
