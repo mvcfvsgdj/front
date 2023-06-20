@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .gallery-wrap {
+            width: 500px;
+            height: 500px;
+
+            border: 1px solid black;
+            position: relative;
+        }
+
+        .gallery {
+            width: 500px;
+            height: 500px;
+
+            background-image: url(https://wimg.mk.co.kr/meet/neds/2021/11/image_readtop_2021_1031636_16357176624833370.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+
+        .prevBtn {
+            width: 30px;
+            height: 60px;
+            border-radius: 10px 10px 0px 10px;
+            background-color: rgb(35, 75, 27);
+
+     
+
+            text-align: center;
+            color: aliceblue;
+            position: absolute;
+            left: 470px;
+            top: 440px;
+        }
+
+
+
+        .nextBtn {
+            width: 30px;
+            height: 60px;
+            border-radius: 10px 10px 10px 0px;
+            background-color: rgb(63, 135, 243);
+            text-align: center;
+            color: aliceblue;
+
+            position: absolute;
+            top: 440px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <h2> 이전 다음 버튼을 갤러리 화면에 붙여 보세요 !!! </h2>
+
+    <!-- 갤러리전체를 감싸는 공간-->
+    <div class="gallery-wrap">
+
+        <!-- 이미지 갤러리가 나오는 공간-->
+        <div class="gallery"></div>
+
+        <!-- 이전 다음 버튼-->
+        <div class="prevBtn">이전</div>
+        <div class="nextBtn">다음</div>
+    </div>
+</body>
+
+</html>
