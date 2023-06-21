@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            height: 100px;
+            background-color: rgb(245, 248, 248);
+        }
+
+        #logo {
+            position: absolute;
+            left: 10px;
+            top: 20px;
+        }
+
+        #search {
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+        }
+
+        #search img {
+            width: 30px;
+            height: 30px;
+        }
+
+        nav {
+            height: 40px;
+            padding: 20px;
+            background-color: rgb(232, 243, 243);
+        }
+
+        #menu {
+            float: right;
+        }
+
+        section {
+            height: 600px;
+            margin-top: 50px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            border: 0.5px solid rgb(255, 241, 241);
+        }
+
+        li img {
+            width: 200px;
+            height: 220px;
+        }
+
+        .course-name {
+            width: 130px;
+            padding: 10px;
+            color: red;
+            background-color: beige;
+            border-radius: 10px 10px 0 0;
+        }
+
+        footer {
+            padding: 20px;
+            background-color: rgb(233, 239, 239);
+        }
+
+        .item {
+            width: 33%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <div id="search">
+            <img src="images/search.png" alt="Search Icon">
+        </div>
+    </header>
+
+    <nav>
+        <div id="menu">
+            <a href="login.html">로그인</a> |
+            <a href="index.html">홈으로</a>
+        </div>
+    </nav>
+
+    <section>
+        <ul>
+            <li>
+                <div class="course-name">Big Data</div>
+                <img src="images/img01.png" alt="Image 1">
+            </li>
+            <li>
+                <div class="course-name">Android</div>
+                <img src="images/img02.png" alt="Image 2">
+            </li>
+            <li>
+                <div class="course-name">Front</div>
+                <img src="images/img03.png" alt="Image 3">
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <div class="item">
+            <img src="images/footer_acorn.png" alt="Acorn Academy">
+            <p>에이콘ACADEMY(홍대)</p>
+        </div>
+        <div class="item">
+            <p>COPYRIGHT(C) HBILAB ALL RIGHTS RESERVED.</p>
+        </div>
+        <div class="item">
+            <p>Footer Content</p>
+        </div>
+    </footer>
+</body>
+
+</html>

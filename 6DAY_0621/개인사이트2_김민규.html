@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            border: 1px solid black;
+            width: 100%;
+            margin: 0 auto;
+            background-color: rgb(253, 249, 244);
+            
+        }
+        .img_wrap{
+            border: 1px solid black;
+            width: 350px;
+            height: 300px;
+            margin: 0 auto;
+            margin-top: 10px;
+            background-image: url(https://image-cdn.trenbe.com/product-images/1665746177684_4f542df2f1f616782dfa5aaa25417676_0.jpg);
+            background-size: cover;
+
+        }
+        .info_wrap{
+            border: 1px solid black;
+            width: 300px;
+            height: 160px;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .info_wrap2{
+            border: 1px solid black;
+            width: 300px;
+            height: 600px;
+            margin: 0 auto;
+            text-align: center;
+            
+        }
+        button{
+            width: 200px
+        }
+        /* 헤더영역 */
+
+
+        header{
+            width: 100%;
+            height: 200px;
+            display: flex;
+            color: rgb(255, 255, 255);
+            background-color: black;
+            line-height: 200px;
+        }
+        .header_logo{
+            width: 33%;
+            text-align: center;
+        }
+        .header_mid{
+            width: 33%;
+            text-align: center;
+        }
+        .header_right{
+            width: 34%;
+            line-height: 200px;
+            text-align: center;
+        }
+        
+        .search-bar{
+            margin-top: 50px;
+            margin-right: 10px;
+            border-radius: 20px;
+            background-color: rgb(255, 255, 255);
+            width: 300px;
+            height: 40px;
+            align-items: center;
+
+            display: flex;
+        }
+
+
+        .search-btn{
+
+            width: 30px;
+            height: 30px;
+            
+        
+
+            background-image: url(https://cdn-icons-png.flaticon.com/512/71/71403.png);
+            background-position: center;
+            background-size: cover;
+
+        }
+        
+        .search-txt{
+            width: 230px;
+            margin-left: 20px;
+            border: 0px;
+            outline: 0px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        /*풋터영역*/
+        footer{
+            width: 100%;
+            height: 200px;
+            color: antiquewhite;
+            background-color: black;
+            display: flex;
+            margin: 0 auto;
+            margin-top: 40px;
+            line-height: 200px;
+        }
+        .footer_logo{
+            width: 33%;
+            text-align: center;
+        }
+        .footer_mid{
+            width: 33%;
+            text-align: center;
+            line-height: 23px;
+        }
+        .footer_right{
+            width: 33%;
+            text-align: center;
+
+        }
+        
+        /*로고 폰트 수정*/
+        .font1{
+            font-size: 40px;
+            line-height: 30px;
+        }
+        .con{
+            color: rgb(253, 253, 253);
+        }
+    
+
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="header_logo">
+                <a class="font1">
+                    <h2><strong>MINSTAR:)</strong></h2></a>
+                </div>
+            <div class="header_mid"></div>
+            <div class="header_right">
+
+                <div class="header_ser">
+                    <div class="search-bar">
+                        <input type="text" class="search-txt">
+                        
+                        <div class="search-btn"></div>
+                
+                      </div>
+                </div>
+
+            </div>
+
+        </header>
+        <div class="img_wrap"></div>
+        <div class="info_wrap">
+            <H2><strong>" T - SHIRT "</strong></H2>
+            <P>" SIMPLE THING "</P>
+            <p>-- PRICE : 299.99$ --</p>
+
+
+
+        </div>
+        <div class="info_wrap2">
+            <br>
+            <p> ORDER HERE </p>
+            <br>
+            <p>-- SIZE --</p>
+        
+            <select>
+                <option>Size Select</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L(sold out)</option>
+                <option>XL</option>
+            </select>
+            <br>
+            <p>-- Color --</p>
+            
+            <BR>
+            <input type="radio" name="color">BLACK
+            <input type="radio" name="color">WHITE
+
+            <BR><BR>
+                <p>-- QTY --</p>
+             
+                <select>
+                    <option>수량</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+
+                </select>
+            <p>-- Card Number --</p>
+            <input text="내용" placeholder="0000-0000-0000-0000">
+            <p> </p>
+        
+            <button href="./">PROCEED-TO-PURCHASE</button>
+
+        </div>
+        <footer>
+
+            <div class="footer_logo"><a class="font1"><h2><strong>MINSTAR:)</strong></h2></a></div>
+            <div class="footer_mid">
+                (주)지에스리테일 대표이사 허연수, 김호성 / 주소: 서울특별시 강남구 논현로 508 (역삼동, GS타워) <br>
+            사업자등록번호 : 116-81-18745 / 통신판매업신고 : 제2014-서울강남-01544호 사업자정보확인  <br>
+            개인정보 보호책임자 : 이종혁 / 호스팅제공자 : ㈜지에스리테일 <br>
+            고객센터(유료) : 1899-4455 / 02-2007-4545 / 팩스 : 02-393-6093 / 이메일문의 : gsshop@gsretail.com  <br>
+          
+         <p>Copyright ©️ GS Retail Co.,Ltd. All Rights Reserved </p>
+            </div>
+            <div class="footer_right">
+                <a class="con" href="login.html">인재채용</a> |
+                <a class="con" href="index.html">문의하기</a>  |
+                <a class="con" href="login.html">contact us</a> |
+                <a class="con" href="index.html">home</a>
+            </div>
+
+        </footer>
+
+    </div>
+</body>
+</html>

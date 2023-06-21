@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        header {
+            width: 100%;
+            height: 100px;
+            background-color: rgb(25, 94, 22);
+            border-bottom: 2px solid rgb(63, 135, 230);
+            position: relative;
+            display: flex;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        nav {
+            width: 100%;
+            height: 70px;
+            background-color: rgb(182, 218, 187);
+            margin: 0 auto;
+
+        }
+
+        section {
+
+
+            width: 1200px;
+            height: 1600px;
+            margin: 50px auto;
+
+
+
+
+        }
+
+        footer {
+            padding-top: 30px;
+            background-color: rgb(25, 94, 22);
+            color: antiquewhite;
+            margin: 0 auto;
+
+        }
+
+        .title {
+            width: 100%;
+            height: 100px;
+            background-color: rgb(25, 94, 22);
+            border-bottom: 2px solid rgb(63, 135, 230);
+            display: flex;
+            text-align: left;
+            margin: 0 auto;
+
+        }
+
+        .title_left {
+            width: 33%;
+        }
+
+        .title_text {
+
+            width: 33%;
+            color: antiquewhite;
+            padding-top: 30px;
+
+
+            border-left: 5px solid antiquewhite;
+            border-right: 5px solid antiquewhite;
+            text-align: center;
+
+        }
+
+        .search {
+            position: absolute;
+            right: 10px;
+            top: 40px;
+
+        }
+
+        /*커피 이미지 , 서치이미지 */
+
+        .coffee {
+
+            position: absolute;
+            top: 0px;
+
+            width: 90px;
+            height: 90px;
+        }
+
+        .coffee2 {
+            margin: 0 auto;
+            width: 90px;
+            height: 90px;
+
+        }
+
+        .menu {
+            width: 100%;
+            position: relative;
+            display: flex;
+            text-align: left;
+            margin: 0px;
+        }
+
+        .nav_i {
+            position: relative;
+            width: 33%;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 40px;
+            height: 40px;
+        }
+
+        .nav_href {
+            width: 33%;
+            text-align: right;
+        }
+
+        .nev_left {
+            width: 33%;
+            height: 40px;
+
+
+        }
+
+        .nav_img {
+            width: 90px;
+            height: 90px;
+            margin: -53.6px;
+
+        }
+
+        .ser_img {
+            margin: 0 auto;
+            width: 19px;
+            height: 19px;
+            position: absolute;
+            right: 0px;
+            top: 4px;
+        }
+
+        .se_img {
+            width: 200px;
+            height: 200px;
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        .wrap {
+            border-bottom: 1px solid rgb(25, 94, 22);
+            display: flex;
+            justify-items: center;
+
+            height: 300px;
+            margin: 0 auto;
+
+
+
+        }
+
+
+
+
+        /*상품목록*/
+
+        ul {
+
+            display: flex;
+            position: relative;
+            text-align: center;
+            margin: 0 auto;
+
+
+
+        }
+
+        li {
+            width: 300px;
+            margin: 0 auto;
+            padding: 10px;
+            text-align: center;
+            list-style: none;
+        }
+
+
+
+
+
+
+        .item {
+            color: antiquewhite;
+            display: flex;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .item1 {
+
+            width: 33%;
+
+        }
+
+        .item2 {
+
+            width: 33%;
+
+        }
+
+        .item3 {
+            margin-top: 40px;
+            width: 33%;
+
+        }
+
+        button {
+            background-color: rgb(25, 94, 22);
+            color: antiquewhite;
+            width: 80px;
+            border-radius: 5px;
+            padding: 5px;
+            border: 0px;
+
+        }
+
+        button:hover {
+            background-color: antiquewhite;
+            color: rgb(25, 94, 22);
+            ;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <header>
+
+        <div class="title">
+            <div class="title_left"></div>
+            <div class="title_text">
+                <h2><strong>NEED SOME ICE COFFEE</strong></h2>
+            </div>
+            <div class="search">
+                <input type="text">
+                <img class="ser_img" src="https://cdn-icons-png.flaticon.com/512/71/71403.png">
+            </div>
+        </div>
+
+    </header>
+
+    <nav>
+        <div class="menu">
+
+
+            <div class="nev_left"></div>
+
+            <div class="nav_i"><img class="nav_img" src="./커피.png"></div>
+
+            <div class="nav_href">
+                <a href="login.html">login</a> | <a href="index.html">home</a>
+            </div>
+
+
+        </div>
+    </nav>
+
+    <section>
+        <div class="wrap">
+            <ul>
+                <li><img class="se_img"
+                        src="https://newsimg-hams.hankookilbo.com/2023/02/27/e1acedf3-4752-4441-a4e0-e5796153f9d4.jpg"><br>
+                    아메리카노<BR>
+                    2500원<BR>
+                    <button>SELECT</button>
+                </li>
+                <li><img class="se_img"
+                        src="https://newsimg-hams.hankookilbo.com/2023/02/27/e1acedf3-4752-4441-a4e0-e5796153f9d4.jpg"><br>
+                    아메리카노[디카페인]
+                    <BR>
+                    2500원<BR>
+                    <button>SELECT</button>
+                </li>
+                <li><img class="se_img"
+                        src="https://newsimg-hams.hankookilbo.com/2023/02/27/e1acedf3-4752-4441-a4e0-e5796153f9d4.jpg"><br>
+                    아메리카노[헤이즐넛]
+                    <BR>
+                    2500원<BR>
+                    <button>SELECT</button>
+                </li>
+            </ul>
+        </div>
+        <div class="wrap">
+            <ul>
+                <li><img class="se_img"
+                        src="https://newsimg-hams.hankookilbo.com/2023/02/27/e1acedf3-4752-4441-a4e0-e5796153f9d4.jpg"><br>
+                    아메리카노[바닐라 시럽]
+                    <BR>
+                    2500원<BR>
+                    <button>SELECT</button>
+                </li>
+                <li><img class="se_img"
+                        src="https://newsimg-hams.hankookilbo.com/2023/02/27/e1acedf3-4752-4441-a4e0-e5796153f9d4.jpg"><br>
+                    아메리카노[예가체프]
+                    <BR>
+                    2500원<BR>
+                    <button>SELECT</button>
+                </li>
+                <li><img class="se_img"
+                        src="https://newsimg-hams.hankookilbo.com/2023/02/27/e1acedf3-4752-4441-a4e0-e5796153f9d4.jpg"><br>
+                    아메리카노[스테비아]
+                    <BR>
+                    2500원<BR>
+                    <button>SELECT</button>
+                </li>
+            </ul>
+
+        </div>
+        <div class="wrap">
+            <ul>
+                <li><img class="se_img"
+                        src="https://www.baristapaulbassett.co.kr/upload/product/A/thumbnailFile_201903211117123240.png"><br>
+                    카페라떼
+                    <BR>
+                    3000원<BR>
+                    <button>SELECT</button>
+                </li>
+                <li><img class="se_img"
+                        src="https://www.baristapaulbassett.co.kr/upload/product/A/thumbnailFile_201903211117123240.png"><br>
+                    카페라떼[디카페인]
+                    <BR>
+                    3000원<BR>
+                    <button>SELECT</button>
+                </li>
+                <li><img class="se_img"
+                        src="https://www.baristapaulbassett.co.kr/upload/product/A/thumbnailFile_201903211117123240.png"><br>
+                    카페라떼[헤이즐넛]
+                    <BR>
+                    3500원<BR>
+                    <button>SELECT</button>
+                </li>
+            </ul>
+
+        </div>
+        <div class="wrap">
+            <ul>
+                <li><img class="se_img"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkjaV4srtl0R9Gxa1u1TaHYNvGFhMddCxtIivDnfB9-A&s"><br>
+                    카라멜 마끼아또
+                    <BR>
+                    3500원<BR>
+                    <button>SELECT</button>
+                </li>
+                <li><img class="se_img" src="https://img.giftting.co.kr/goods/G00000131153/G00000131153_550.jpg"><br>
+                    요거트 스무디
+                    <BR>
+                    50000원<BR>
+                    <button>SELECT</button>
+                </li>
+                <li><img class="se_img"
+                        src="data:image/jpeg;base64,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"><br>
+                    그린티라떼
+                    <BR>
+                    3000원<BR>
+                    <button>SELECT</button>
+                </li>
+            </ul>
+
+        </div>
+        </div>
+
+
+    </section>
+
+     <footer>
+        <div class="item">
+            <div class="item1"><img class="coffee2" src="./커피.png"></div>
+             <div class="item2">
+                 <h2>고객센터</h2>
+
+                 1544 - 7199 (유료)
+                 1:1 문의
+                 이메일
+                 <br>
+
+                 평일 오전 9시 - 오후 6시
+                 <br>
+
+                 <button><strong> FAQ 자주 묻는 질문 </strong></button>
+             </div>
+             <div class="item3">
+                 <h2>COPYRIGHT(C) NEED SOME ICE COFFEE ALL RIGHTS RESERVED.</h2>
+             </div>
+         </div>
+
+     </footer>
+    </div>
+
+</body>
+
+</html>
