@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        /*메인 크기*/
+
+        .main{
+            width: 100%;
+            height: 100%;
+        }
+        
+        /*헤더영역*/
+
+        header{
+            
+            height: 100px;
+            background-color: rgb(245, 248, 248);
+            position: relative;
+
+
+        } 
+        .title{
+
+            position: absolute;
+            left: 10px;
+            top: 20px;
+
+        }
+        .search{
+
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+        }
+        .ser{
+
+            width: 160px;
+            height: 30px;
+            border: 1px solid black;
+            position: relative;
+            background-color: white;
+
+        }
+
+        .ser_img{
+            
+
+            position: absolute;
+            right: 10px;
+
+            width: 30px;
+            height: 30px;
+        }
+        input{
+           width: 150px;
+           height: 25px;
+           border: 0px;
+           outline: 0px;
+
+                }        
+
+        /*nav 영역*/
+
+        nav{
+            height: 40px;
+            padding: 20px;
+            background-color: rgb(232, 243, 243);
+            text-align: right;
+        }
+
+        /*section 영역*/
+
+        section{
+            height: 600px;
+            margin-top: 50px;
+            text-align: center;
+            align-items: center;
+          
+
+        }
+        /*로그인영역*/
+
+        .login_wrap{
+            margin: 0 auto;
+            width: 400px;
+            padding: 20px;
+            border: 0.5px solid rgb(234, 222, 222);
+        }
+        
+        .log_info{
+            padding: 10px;
+
+        }
+        
+        .log{
+            margin-top: 5px;
+            border: 1px solid black;
+            width: 98%;
+            height: 40px;
+        }
+        button{
+            width: 100%;
+            height: 50px;
+            background-color: silver;
+            border: 0px;
+            margin-top: 10px;
+        }
+
+
+
+  
+        
+
+        section > ul{
+            margin: 0 auto;
+        }
+
+        /*footer영역*/
+
+        footer{
+            padding: 20px;
+            background-color: rgb(233, 239, 239);
+            display: flex;
+
+        }
+        .item1{
+            width: 33%;
+
+        }
+        .item2{
+            width: 33%;
+
+        }
+        .item3{
+            width: 33%;
+
+        }
+        a{
+            color: black;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+     <div class="main">
+        
+        <header>
+            <div class="title">
+                <img src="./logo.png">
+
+            </div>
+            
+            <div class="search">
+                    <div class="ser"> <input type="text">
+                    <img class="ser_img" src="./검색.png">
+                    </div>
+            </div>
+
+
+        </header>
+
+        <nav>
+            <a href="./login.html">로그인</a> | <a href="./index.html">홈으로</a>
+
+        </nav>
+
+        <section>
+
+            <div class="login_wrap">
+
+
+                <div class="log_img">
+                    <img src="./login_logo.jpg">
+                </div>
+
+                <div class="log_info">
+
+                    <input class="log" type="text" placeholder="아이디">
+                    <input class="log" type="text" placeholder="비번">
+                    <button>로그인</button>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </section>
+
+        <footer>
+            
+            <div class="item1">
+                <img class="item_img" src="./footer_acorn.png">
+            </div>
+            <div class="item2">에이콘 ACADEMY(홍대)</div>
+            <div class="item3">COPYRIGHT(C) HNILAB ALL RIGHTS RESERVED</div>
+
+        </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+     </div>
+    
+</body>
+</html>
