@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let menu = prompt("메뉴선택", "1: 등록, 2:조회  , 3:변경");
+        let menuInt = parseInt(menu) ; //"1" => 1 문자를 숫자로 바꿔주는 명령어
+                            // menu 라는 변수의  값 이용 
+        
+        
+        // "1" 1 구분할 수 있어야 함
+        // 
+
+        //alert(menu);
+        //alert(menuInt);
+
+
+        switch (menuInt) {
+
+            case 1:
+                alert("등록");
+                break;
+            case 2:
+                alert("조회");
+                break;
+            case 3:
+                alert("변경");
+                break;
+            default:
+                alert("잘못된 메뉴");
+        }
+
+
+    </script>
+</body>
+
+</html>

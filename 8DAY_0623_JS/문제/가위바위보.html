@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //0:가위 , 1:바위 , 2:보
+
+        let user;
+        let computer;
+        let result; // 출력결과 담을 변수
+
+
+        while (true) { // 무조건참 => 탈출 조건 
+            user = prompt("가위 바위 보", "가위:0 바위:1 보:2");
+            // 0 1 2 
+            computer = Math.floor(Math.random() * 3); // 1보다 작은 임의의 실수형 난수값 0~ 1보다 작은 실수 값
+
+            console.log(user);
+            console.log(computer);
+
+            if (user != computer) {
+                //사용자 승패 구하기
+                if (user == 0) { // 가위
+                    if (computer == 2) { //바위
+
+                        result = "승리";
+                    } else {
+                        result = "패배";
+                    }
+
+                } else if (user == 1) {
+                    if (computer == 0) {
+                        result = "승리"
+                    } else {
+                        result = "패배"
+                    }
+
+                }
+                else if (user == 2) {
+                    if (computer == 1) {
+                        result = "승리"
+                    } else {
+                        result = "패배"
+
+                    }
+
+                }
+                //탈출
+                break;
+
+
+
+            }
+
+
+
+        }
+        //반복 종료
+
+        alert(result);
+
+
+
+
+    </script>
+
+</body>
+
+</html>

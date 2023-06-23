@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2> 증감연산자 ++ , -- </h2>
+    <p>연잔자는 반드시 연산의 결과가 발생함.</p>
+
+    <script>
+
+        let a=10;
+        console.log( a);
+
+
+        // a=1;
+
+        a=a+1; // 10 + 1 => a기억장소에 할당함 a=> 11 변수 : 기억, 이용
+
+        console.log( a);
+
+        a++;
+
+        console.log( a);
+
+        ++a;
+        console.log( a);
+
+        //    ++a a++ 증가를 먼저 시키고 , 증가를 나중에 시킨다.
+
+        // 공통점 : 변수의 값을 1증가 시킴
+        // 다른점 : 연산의 결과가 다름
+        // ++a : =>  증가된 후의 값을 연산의 결과로 반한
+        // a++ : => 증가되기 전의 값을 연산의 결과로 반환
+
+        let b=10 , c=10;
+        let rtn1 , rtn2;
+
+        rtn1=b++;  // rtn1 = 10 ;
+        rtn2=++c;  // rtn2 = 11 ;
+
+        console.log(b); //11
+        console.log(c); //11
+
+
+        console.log(rtn1);  //?
+        console.log(rtn2);  //?
+
+        let sum = 30;
+
+
+        
+    </script>
+</body>
+</html>

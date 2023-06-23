@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2> if 문  분기문 </h2>
+
+    <script>
+
+        let kor=95;  // 등급 구하기 A, B, C, 나머지 F
+        let grade;
+        
+
+        if( kor >=90){
+            grade="A"; // '' . ""
+                //조건이 만족할 때 수행할코드
+                //조건1 만족할 때 수행할 코드            
+        }
+        else if(kor >=80){
+            grade="B";
+                //위에 조건이 만족스럽지 않을때  수행됨
+                //조건 2 만족할 떄 수행할 코드
+
+        }
+        else if(kor >=70){
+            grade="C";
+            
+        }else{ //위에 조건이 모두 아닐경우 ,
+            grade="F";
+            //위의 조건이 아닌경우에 수행 할 코드 *조건 x
+        }
+
+        alert(grade);
+
+
+    </script>
+    
+</body>
+</html>
