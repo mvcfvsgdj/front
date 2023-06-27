@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        for(let i=0; i<3; i++){
+        let point = prompt("학점")
+        let result
+
+        if(point>=90){
+            result="a"
+
+        }
+        else if(point>=80){
+            result="b"
+        }
+        else if(point>=80){
+            result="c"
+        }
+        else if(point<0){
+            alert("점수가 마이너스?ㅋ")
+            break;
+        }
+        else
+            result="낙제"
+    
+            alert(result)    
+        }
+
+
+
+
+    </script>
+</body>
+</html>

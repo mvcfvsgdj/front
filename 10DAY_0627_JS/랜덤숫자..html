@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let result;
+      let i = 0;
+      let number = Math.floor(Math.random() * 100) + 1;
+      while (i < 3) {
+        let random = parseInt(prompt("1~100숫자를 입력하세요"));
+        if (random == number) {
+          result = "bingo";
+          alert(result);
+          break;
+        } else if (random < number) {
+          result = "up";
+          alert(result);
+        } else if (random > number) {
+          result = "down";
+          alert(result);
+        }
+        i++;
+        if (i == 3) {
+          alert("정답은" + number);
+        }
+      }
+    </script>
+  </body>
+</html>
