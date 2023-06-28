@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+        // 변수의 유효범위
+        // 전역변수, 지역변수
+        // 모든 함수에서 사용할 수 있는 변수
+        // 지역변수 : 지역에서만 사용할 수 있음 
+        // 지역변수를 만드는방법
+        // 함수영역안에서 선언된 변수는 그 함수 안에서만 사용
+        // 특정블럭 {   }  안에서 사용된 변수는 그 블럭 안에서 만 사용 가능 (for, if)
+
+
+        let x=5;
+
+
+        function test(){
+            let sum=10;
+            let a=20;
+        
+            alert(sum);
+            alert(x);
+            alert(a);
+
+            if(sum == 10 ){
+                let y=10;
+
+            }
+
+            alert("y=" + y);
+        }
+        test()
+        alert("함수밖에서 sum 변수 출력시도 " + sum);
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <H2>이미지변경하기</H2>
+
+    <img src="boy.png" id="pimg">
+    <button onclick="changeImg()" >이미지변경</button>
+    
+    <script>
+        function changeImg(){
+          //  alert("dkafkda");
+
+          // 이미지태그 선택
+          // 이미지의 속성을 변경 src속성
+
+           let pimg = document.getElementById("pimg");
+           alert(pimg);
+           pimg.src="girl.png";
+
+        }
+    </script>
+</body>
+</html>
