@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+
+
+
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div id="mybtn">어이~ 동생들</div>
+    <div id="content">거기모여있지마</div>
+    <button onclick="style1()">배경색 추가</button>
+    <button onclick="style2()">나선욱 소환</button>
+    <button onclick="style3()">이미지 배경색 없애기</button>
+    <button onclick="style4()">나선욱 집에보내기</button>
+    <button onclick="style5()">99대장 어록 </button>
+
+
+    <script>
+        function style1() {
+            //alert("test")
+
+            let mybtn = document.getElementById("mybtn");
+
+            mybtn.style.width = "400px";
+            mybtn.style.height = "400px";
+            mybtn.style.backgroundColor = "green";
+
+
+        }
+
+        function style2() {
+
+            let mybtn = document.getElementById("mybtn");
+
+            mybtn.style.width = "400px";
+            mybtn.style.height = "400px";
+            mybtn.style.backgroundImage = "url(https://i.namu.wiki/i/8dLX29fjOcjoX8cjbjfE-6ajqB_7dUiIMPpJ3E9uwLaCeXqog5k-Irv8wuop_ImN2I05mxHOmRNB_QyG7FMheg.webp)";
+            mybtn.style.backgroundSize = "cover";
+            mybtn.style.backgroundPosition = "center";
+
+
+
+        }
+
+
+        function style3() {
+
+            let mybtn = document.getElementById("mybtn");
+            //배경색 투명하게
+            mybtn.style.backgroundColor="transparent";
+        }
+
+
+        function style4() {
+
+            let mybtn = document.getElementById("mybtn");
+
+            mybtn.style.backgroundImage="none";
+        }
+
+        function style5() {
+
+            let content = document.getElementById("mybtn");
+
+            content.innerHTML=" html 안꺼 ?"
+        }
+
+    </script>
+
+</body>
+
+</html>

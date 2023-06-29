@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+        .btn{
+
+            width: 100px ;
+            height: 50px;
+            background-color:rgb(32, 105, 10);
+            border-radius: 10px;
+            color: aliceblue;
+            text-align: center;
+            line-height: 50px;
+            font-size: 18px;
+
+        }
+
+
+    </style>
+
+
+
+</head>
+<body>
+
+    <div id="mybtn">버 튼</div>
+    
+    <button onclick="add()">스타일추가</button>
+    <button onclick="remove()">스타일제거</button>
+
+
+    <script>
+        function add(){
+            //alert("test")
+            //선택
+           let mybtnE = document.getElementById("mybtn");
+                //  alert(mybtnE);
+
+                // mybtnE.style.width="100px";
+
+                mybtnE.classList.add("btn");
+
+
+        }
+
+        function remove(){
+
+            let mybtnE = document.getElementById("mybtn");
+            mybtnE.classList.remove("btn");
+        }
+
+    </script>
+
+</body>
+</html>

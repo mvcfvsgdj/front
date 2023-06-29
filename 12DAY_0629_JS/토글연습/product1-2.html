@@ -15,9 +15,9 @@
 		<div id="prod-pic">
 			<img src="coffee-pink.jpg" alt="에디오피아 게뎁" id="cup" width="200" height="200">
 			<div id="small-pic">
-				<img src="coffee-pink.jpg" onclick="a()" class="small" id="pink">
-				<img src="coffee-blue.jpg" onclick="b()" class="small" id="blue">
-				<img src="coffee-gray.jpg" onclick="c()" class="small" id="gray">
+				<img src="coffee-pink.jpg" class="small" onclick="chnageImg1()">
+				<img src="coffee-blue.jpg" class="small" onclick="chnageImg2()">
+				<img src="coffee-gray.jpg" class="small" onclick="chnageImg3()">
 			</div>
 		</div>
 		<div id="desc">
@@ -29,7 +29,8 @@
 				<li>로스팅 : 2019.06.17</li>
 				<button>장바구니 담기</button>
 			</ul>
-			<a href="#" onclick="view_detail()" id="view">상세 설명 보기</a>
+			<a href="#" id="view" onclick="toggle()">상세 설명 보기</a>
+
 		</div>
 		<hr>
 		<div id="detail">
@@ -54,45 +55,83 @@
 
 
 
-		let flag = true
-		function view_detail() {
-			let view1 = document.getElementById("detail");
+		//토글 
+
+		//보이기 /안보이기 상태 저장 변수 true / false 
+		let flag = true;
+
+		function toggle() {
 
 
 			if (flag == true) {
-				view1.style.display = "block";
+				let detailE = document.getElementById("detail");
+				detailE.style.display = "block";
 				flag = false;
-			} else {
-				view1.style.display = "none";
+
+			} else if (flag == false) {
+				let detailE = document.getElementById("detail");
+				detailE.style.display = "none";
 				flag = true;
+
+
 			}
 
 
-		}
-		function a() {
 
-			let cup = document.getElementById("cup");
-			cup.src = "coffee-pink.jpg";
 
-		}
-		function b() {
-
-			let cup = document.getElementById("cup");
-			cup.src = "coffee-blue.jpg";
-
-		}
-		function c() {
-
-			let cup = document.getElementById("cup");
-			cup.src = "coffee-gray.jpg";
 
 		}
 
+		function chnageImg1() {
+			//alert("test")
+
+
+			//cup id 가진 태그 찾아오기
+			let cup1 = document.getElementById("cup");
+			cup1.src = "coffee-pink.jpg";
+
+
+
+			//cup 태그의 src 속성 바꾸기
+
+
+		}
+
+		function chnageImg2() {
+
+			let cup1 = document.getElementById("cup");
+			cup1.src = "coffee-blue.jpg"
+
+		}
+		function chnageImg3() {
+
+			let cup1 = document.getElementById("cup");
+			cup1.src = "coffee-gray.jpg"
+
+		}
 
 
 
 
 
+		/*
+			   function show(){
+	   
+				   // DOM 제어
+				   // document <= html 문서의 모든 태그를 tree 구조로 메모리 로드
+				   // 
+				let detailE =	document.getElementById("detail");
+				   //alert(detailE);
+				   detailE.style.display="block";
+	   
+			   }
+			   function hide(){
+	   	
+				   let detailE = document.getElementById("detail");
+				   detailE.style.display="none";
+			   }
+	   
+			   */
 	</script>
 </body>
 

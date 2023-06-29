@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+let food = {
+    title: "엔초비 파스타",
+    image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20130801_62%2Fgmlwjd1983_1375331676240yOdsI_JPEG%2FIMG_9451.jpg&type=sc960_832",
+    foodIngredients: "스파게티면 100g, 마늘 7~8개, 엔초비 3개, 올리브유, 후추, 면수 2국자, 페페론치노 적당량, 소금 1/2큰술",
+    recipe: "1. 물 다섯컵에 소금 1/2큰술을 넣고 끓이세요<br>2. 면 100g 넣어주세요<br>3. 7~8분간 면을 삶아주세요<br>4. 마늘을 편으로 썰어주세요<br>5. 엔초비 3개를 다져주세요<br>6. 팬에 올리브유를 4~5큰술 두르고 마늘을 타지 않게 볶아주세요<br>7. 마늘이 노릇해지면 페페론치노를 넣어주세요<br>8. 다진 엔초비도 넣어주세요<br>9. 면수 2국자 정도 넣어주세요<br>10. 면을 건져서 넣고 잘 섞어주세요<br>11. 완성이에요<br>12. 기호에 따라 후추 등을 뿌려 드세요",
+    time: "10~15분"
+};
+
+document.write("<h1>" + food.title + "</h1>");
+document.write("<img src='" + food.image + "' alt='" + food.title + "'><br>");
+document.write("<strong>재료:</strong> " + food.foodIngredients + "<br>");
+document.write("<strong>레시피:</strong> " + food.recipe + "<br>");
+document.write("<strong>소요 시간:</strong> " + food.time + "<br>");
+
+
+    </script>
+
+</body>
+
+</html>
