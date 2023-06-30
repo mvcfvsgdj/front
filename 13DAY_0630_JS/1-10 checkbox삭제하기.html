@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+
+
+    <button onclick="selDelete()"> 선택삭제 </button>
+
+
+    <script>
+        function selDelete() {
+            //querSelectorAll : 1개지만 0번쨰로 꺼내야 나옴 0부터 시작!!
+            let checkboxs = document.querySelectorAll("input[type='checkbox']"); // input중에서  한개 가져올때 괄호 [] 사용
+            //alert(checkboxs.length)
+
+            let p = document.querySelector("body");
+
+            for (let i = 0; i < checkboxs.length; i++) {
+                let checkbox = checkboxs[i]; // i=0 첫번째 checkbox
+                if (checkbox.checked == true) {
+                    //alert("선택");
+                    p.removeChild(checkbox);
+                }
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

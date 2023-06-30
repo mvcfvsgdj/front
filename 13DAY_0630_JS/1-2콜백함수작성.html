@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // 고차함수 ( )
+
+
+        function hello(f){ // 매개변수로 함수를 받을 수 있다 . 매개변수 받은 함수는 콜백함수
+                            // 
+        alert("1초후 나옴")
+          f();
+
+        }
+
+        function messageKo(){
+            alert("ㅎㅇ");
+        }
+
+
+
+        function messageEng(){
+            alert("Hi");
+        }
+
+        hello(messageKo);
+        hello(messageEng);
+
+    
+        //
+
+        //1. 함수를 만든다 .
+
+        function aFunc(){
+            
+            alert("test");
+
+        }
+
+        //2. 익명으로 함수를 만든다.
+
+        setTimeout( aFunc , 1000) ; //  (콜백함수 , 1초 * 1000) 1초후 콜백함수 실행
+                                    //  (함수명 괄호는 제외 ()x )
+                                    
+        setTimeout( function(){
+            alert("test2");
+
+        } , 2000);
+
+
+        //화살표 함수 
+        setTimeout(()=> alert("test3") , 3000);
+
+
+
+    </script>
+
+</body>
+</html>

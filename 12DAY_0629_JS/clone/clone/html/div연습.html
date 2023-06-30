@@ -11,8 +11,38 @@
         .main {
             width: 100%;
             height: 100%;
+            position: relative;
 
 
+
+
+        }
+        /* 좋아요버튼 */
+        .wrap_like_btn{
+
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            color: black;
+            padding: 20px;
+            position: fixed;
+            right: 10px;
+            bottom: 20px;
+
+        }
+
+        .like_btn{
+            border: 1px solid black;
+            width: 70px;
+            text-align: center;
+            font-size: 13px;
+          
+            
+        }
+        .like_img{
+            
+            width: 60px;
+            height: 60px;
 
 
         }
@@ -159,7 +189,7 @@
 
 
         }
-
+        /* 맨 아랫 정보 */
         .tittle5 {
 
             width: 1200px;
@@ -178,6 +208,16 @@
 <body>
     <!--메인 -->
     <div class="main">
+
+        <!--좋아요 버튼-->
+
+        <div class="wrap_like_btn">
+            <div class="like_btn">
+                <div>좋아요~
+                <button><img class="like_img" src="https://i.postimg.cc/6p1ZDLLp/pngwing-com.png" ></button>
+                </div>
+            </div>
+        </div>
 
         <!--바깥 테두리-->
         <div class="wrap">

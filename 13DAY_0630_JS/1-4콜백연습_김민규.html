@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function alpha(a){ //callback을 매개변수로 받는 함수 : 고차함수
+            
+            a();
+                }
+
+        function aa(){
+
+            alert("3600초 뒤 메시지가 나옵니다.")
+            alert(" 7200초 뒤 메시지가 하나더 나옵니다.")
+        }        
+
+        function bb(){
+
+            alert("이걸 기다렸다고?");
+
+        }
+        function cc(){
+
+            alert("끄고 자라")
+        }
+        alpha(aa)
+       // alpha(bb);
+       // alpha(cc);
+
+        setTimeout( bb , 3600000);
+        setTimeout( cc , 7200000);
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

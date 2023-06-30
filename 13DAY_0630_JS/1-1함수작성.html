@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+        
+        hello(); // 함수호출 , 가능한 이유 함수 호이스팅 : 끌어올림
+        //fuc2(); //  오류발생  x
+
+        function hello(){   //
+            alert("hi");
+        }
+
+        // 함수 표현식 작성
+        let fuc2 = function(){
+            alert("hi2");
+        }
+
+        //함수표현식으로 작성한 경우 호이스팅이 안됨 선언 이후부터 사용가능
+        fuc2();
+
+        
+    </script>
+</body>
+</html>
