@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let life = ["A" , "B" , "C", "D" ,"E"];
+        
+        console.log(life[0]);
+        console.log(life[1]);
+        console.log(life[2]);
+        console.log(life[3]);
+        console.log(life[4]);
+
+
+
+       /* for(let i=0 ; i< life.length; i++){
+            alert(life[i]+ " " + i);
+        }*/
+
+        life.forEach(function(item , index){
+            alert(item +" "+ index);
+                })
+
+    </script>
+    
+</body>
+</html>

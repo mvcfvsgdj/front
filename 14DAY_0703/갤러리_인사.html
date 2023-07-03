@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .slide-wrap{
+            width: 500px;       
+           
+        }
+        .gallery{
+            width: 100%;
+            height: 50px; 
+                                
+        } 
+
+        .gallery  div{
+           display: none;            
+        }  
+        
+    </style>
+
+ 
+
+
+<script>
+     
+       window.addEventListener("load" , function(){
+
+        // 갤러리 안의 div 요소들 얻어오기
+       let divtags=  document.querySelectorAll(".slide-wrap .gallery div");
+       let contents =[];        // 갤러리 인사로 사용할 내용을 담을 배열준비 
+       /*divtags.forEach( function( div , index){
+        contents[index] = div.innerHTML;
+       });
+        */
+
+       for( let i=0 ; i< divtags.length ; i++){
+          contents[i] = divtags[i].innerHTML;
+       }
+
+        let index=-1;   // 이미지배열의 index를 의미 (1 => 두번째 부터 )       
+        function nextMessage(){    
+            index++;        
+            if( index >= contents.length)
+                index=0;
+        
+            // 갤러리 요소 얻어오기
+            let gallery   =document.querySelector(".gallery");                
+             gallery.innerHTML= contents[index];
+             
+             // contain  ,  100%  500px
+                         
+           // 갤러리에 애니메이션 효과
+            gallery.animate( {
+                    transform: [                          /* transform   translate 위치 이동 */
+                    'translateY(100%)',    //시작
+                    'translateY(0px)'      //도착
+                    ]
+                 },
+                 {
+                     duration:1000               // 위의효과가 1초간 지속되도록
+                 });            
+          }
+
+          setInterval(nextMessage , 3000);      
+
+       });      
+     
+</script>
+</head>
+<body>    
+    
+        <div class="slide-wrap">
+            <div class="gallery">  
+                <div> 이제 여름이네요    </div>
+                <div> 에이컨없이 못 살겠어유  </div>
+                <div> 에이콘엔 에이컨이 빵빵합니다. ^^  즐겁게 코딩 합시당!! </div>  
+            </div>           
+        </div>     
+</body>
+</html>

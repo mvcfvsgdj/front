@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>갤러리</title>
+        <style>
+            .gallery {
+                display: flex;
+                flex-wrap: wrap;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+    
+            .gallery img {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>갤러리</h1>
+        <div class="gallery">
+            <img src="image1.jpg">
+            <img src="image2.jpg">
+            <img src="image3.jpg">
+            <!-- 추가 이미지들 -->
+        </div>
+        <div>
+            <span id="currentPage"></span> / <span id="totalPages"></span>
+            <button onclick="previousPage()">이전</button>
+            <button onclick="nextPage()">다음</button>
+        </div>
+    
+        <script>
+            var currentPage = 1;
+            var totalPages = 0;
+            var imagesPerPage = 3; // 페이지당 이미지 수
+            var gallery = document.querySelector('.gallery');
+            var currentPageElement = document.getElementById('currentPage');
+            var totalPagesElement = document.getElementById('totalPages');
+            var images = gallery.getElementsByTagName('img');
+    
+            // 페이지 정보 업데이트
+            function updatePageInfo() {
+                totalPages = Math.ceil(images.length / imagesPerPage);
+                currentPageElement.textContent = currentPage;
+                totalPagesElement.textContent = totalPages;
+            }
+    
+            // 현재 페이지 이미지 보이기
+            function showCurrentPage() {
+                var startIndex = (currentPage - 1) * imagesPerPage;
+                var endIndex = startIndex + imagesPerPage;
+    
+                for (var i = 0; i < images.length; i++) {
+                    if (i >= startIndex && i < endIndex) {
+                        images[i].style.display = 'block';
+                    } else {
+                        images[i].style.display = 'none';
+                    }
+                }
+            }
+    
+            // 이전 페이지로 이동
+            function previousPage() {
+                if (currentPage > 1) {
+                    currentPage--;
+                    showCurrentPage();
+                    updatePageInfo();
+                }
+            }
+    
+            // 다음 페이지로 이동
+            function nextPage() {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    showCurrentPage();
+                    updatePageInfo();
+                }
+            }
+    
+            updatePageInfo();
+            showCurrentPage();
+        </script>
+    </body>
+    </html>

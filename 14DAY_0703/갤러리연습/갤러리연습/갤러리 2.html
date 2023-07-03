@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .gallery-wrap{
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+        margin: 0 auto;
+
+        position: relative;
+
+    }
+    .gallery{
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+        background-image: url("img1.png");
+        background-size: cover;
+    }
+    .btn{
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+    }
+    
+    .preBtn{
+        position: absolute;
+        left: 0px;
+        top:220px
+
+    }
+    .nextBtn{
+        position: absolute;
+        right: 0px;
+        top:220px
+
+    }
+
+</style>
+<script>
+    let imgs = ["img1.png" , "img2.png", "img3.png", "img4.png" ]
+    let i=0;
+    function nextImg(){
+
+        i++;
+        if(i>= imgs.length){
+        i=0;
+        }
+     
+        let gallery = document.querySelector(".gallery");
+        gallery.innerHTML="";
+        gallery.style.backgroundImage="url(' "+ imgs[i] +"')"
+       // gallery.style.backgroundImage="url('img1.png')";
+        gallery.style.backgroundSize="cover";
+        gallery.style.backgroundPosition="center";
+       
+
+
+
+    }
+    function preImg(){
+        i--;
+        if(i<0){
+            i= imgs.length-1; // 배열의 가장 큰 index
+        }
+
+        let gallery = document.querySelector(".gallery");
+        gallery.innerHTML="";
+        gallery.style.backgroundImage="url(' "+ imgs[i] +"')"
+        gallery.style.backgroundSize="cover";
+        gallery.style.backgroundPosition="center";
+
+    }
+
+</script>
+<body>
+
+
+    <div class="gallery-wrap">
+        <!-- gallery -->
+        <div class="gallery"></div>
+        <!--btn-->
+        <div class="preBtn  btn" onclick="preImg()"><<</div>
+        <div class="nextBtn btn" onclick="nextImg()">>></div>
+         
+    </div>
+    
+</body>
+</html>

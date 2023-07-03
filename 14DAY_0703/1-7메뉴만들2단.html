@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    *{
+        padding: 0px;
+        margin:  0px;
+
+    }
+
+    ul{
+        list-style: none;
+    }
+    .menu{
+        display: flex;
+        border: 1px solid black;
+    } 
+    .menu-item{
+        width: 150px;
+        height: 50px;
+        background-color: azure;
+    }
+
+    
+
+    .sub-menu{ /* display : none  <-> display : block  => transition 효과 사용못함*/
+        height: 0px;
+        overflow: hidden;  /* 넘치는 내용 감추기 */
+
+    }
+
+    /* */
+    .menu:hover .menu-item{
+        height: 300px;
+        transition: 30s;
+    }
+
+    .menu:hover .sub-menu{
+        height: 300px; /* height : 0px ; overflow :hidden - > height : 300px */
+    }
+
+
+    .visual{
+        background-color: blueviolet;
+        height: 100px;
+    }
+</style>
+<body>
+    
+    
+
+    <ul class="menu">
+        <li class="menu-item">상위메뉴
+            <ul class="sub-menu">
+                <li>하위메뉴1</li>
+                <li>하위메뉴1</li>
+                <li>하위메뉴1</li>
+
+            </ul>
+        </li>
+        <li class="menu-item">상위메뉴
+            <ul class="sub-menu">
+                <li>하위메뉴2</li>
+                <li>하위메뉴2</li>
+                <li>하위메뉴2</li>
+
+            </ul>
+        </li>
+
+        <li class="menu-item">상위메뉴
+            <ul class="sub-menu">
+                <li>하위메뉴3</li>
+                <li>하위메뉴3</li>
+                <li>하위메뉴3</li>
+  
+            </ul>
+        </li>
+        <li class="menu-item">상위메뉴
+            <ul class="sub-menu">
+                <li>하위메뉴4</li>
+                <li>하위메뉴4</li>
+                <li>하위메뉴4</li>
+
+            </ul>
+        </li>
+
+
+    </ul>
+
+    <div class="visual"> </div>
+</body>
+</html>

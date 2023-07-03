@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .slide-wrap{
+            width: 500px;       
+           
+        }
+        .gallery{
+            width: 100%;
+            height: 50px; 
+                                
+        } 
+
+        .gallery  div{
+           display: none;            
+        }  
+        
+    </style>
+
+
+<script>
+     
+       window.addEventListener("load" , function(){
+
+
+        // 갤러리 안의 div 요소들 얻어오기
+       let divtags=  document.querySelectorAll(".slide-wrap .gallery div");
+       let contents =[];        // 갤러리 인사로 사용할 내용을 담을 배열준비 
+
+       /*divtags.forEach( function( div , index){
+        contents[index] = div.innerHTML;
+       });
+        */
+
+
+       for( let i=0 ; i< divtags.length ; i++){
+          contents[i] = divtags[i].innerHTML;
+       }
+
+       let index=-1;   // 이미지배열의 index를 의미 (1 => 두번째 부터 )       
+       function nextGallery(){    
+
+            index++;        
+            if( index >= contents.length)
+                index=0;
+        
+            // 갤러리 요소 얻어오기 , 갤러리 안쪽의 내용을 바꾸기 위함
+            let gallery   =document.querySelector(".gallery");                
+             gallery.innerHTML= contents[index];
+             
+           
+        }
+
+        //3초 간격으로  nextGallery 호출함
+        setInterval(nextGallery , 3000);      
+
+       });      
+     
+</script>
+</head>
+<body>    
+    
+        <div class="slide-wrap">
+            <div class="gallery">  
+                <div> 이제 여름이네요    </div>
+                <div> 에이컨없이 못 살겠어유  </div>
+                <div> 에이콘엔 에이컨이 빵빵합니다. ^^  즐겁게 코딩 합시당!! </div>  
+            </div>           
+        </div>     
+</body>
+</html>
+
+
+/* 
+
+<!--
+    순서 적어 보기
+
+    0. gallery안의 div 안의 내용( 인사말을) 을 담을 배열을 준비한다
+    1. gallery 안의 div 들의 정보를 얻어온다.
+    2. 반복 
+        2.1 div 얻어온다
+        2.2 div의 innerHTML 속성을 이용해 인사말을 얻어온다
+        2.3 인사말 배열에 추가시킨다.
+    3. 3초간격으로 갤러리의 내용이 배열의 요소의 값으로 하나씩 바뀌게 한다.
+
+
+
+    0. 인사말을 담을 배열준비한다.
+    1. gallery 안의 div 들의 정보를 얻어온다.
+    2. 반복을 통해 div안의 인사말 정보를 배열에 담는다      
+    3. 3초간격으로 갤러리의 내용이 배열의 요소의 값으로 하나씩 바뀌게 한다.   // 0 1 2   0  1  2 
+
+
+
+
+
+
+-->

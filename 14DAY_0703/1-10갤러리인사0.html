@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        let msg = ["여름", "프로젝트", "며칠전", "더웡"];
+        let i=0;
+
+        function nextMsg() {
+        
+        let gallery = document.querySelector(".gallery")
+        gallery.innerHTML=msg[i];
+            i++;
+            //배열의 범위보다 커지면 index를 i (인덱스) 초기화 : 0
+            if( i >= msg.length){
+                i=0;
+
+            }
+    }
+
+    </script>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <div class="gallery">
+            갤러리 시작
+        </div>
+    </div>
+
+    <button onclick="nextMsg()">다음</button>
+
+
+
+</body>
+
+</html>
