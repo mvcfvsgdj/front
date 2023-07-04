@@ -25,6 +25,7 @@
         margin: 0 auto;
         padding: 0px, 20px;
         border: 1px solid black;
+   
     }
     
     .gyu {
@@ -66,7 +67,7 @@
 
     }
     /*가수 이미지 /정보 내용 */
-    ul {
+    .mg_ul {
         width: 704px;
         border-top: 1px solid #666;;
         list-style: none;
@@ -75,7 +76,7 @@
         margin: 0 auto;
     }
 
-    ul li {
+    .mg_li {
 
         width: 223px;
         margin: 4px;
@@ -127,6 +128,25 @@
     outline: none;
         
     }
+
+    /* 차트영역 */
+
+    .mg_chart{
+        border: 4px solid rgb(101, 233, 13);
+        width: 280px;
+        height: 416px;
+
+    }
+    .mg_chart_ul{
+        width: 278px;
+        height: 377px;
+
+    }
+    .mg_chart_list{
+        width: 278px;
+        height: 34px;
+
+    }
 </style>
 
 <body>
@@ -141,8 +161,8 @@
                         <span class="hot_text">지금 이슈가 되는 아티스트의 인기 컨텐츠입니다.</span>
                         <div class="h21">23</div>
                     </h2>
-                    <ul>
-                        <li>
+                    <ul class="mg_ul">
+                        <li class="mg_li">
                             <!--아티스트별 링크-->
                             <a href="https://www.melon.com/video/detail2.htm?mvId=50262530&menuId=10010101">
                             <img class="hot_img"
@@ -156,7 +176,7 @@
                                </a>
                             
                         </li>
-                        <li>
+                        <li class="mg_li">
                             <!--아티스트별 링크-->
                             <a href="https://www.melon.com/video/detail2.htm?mvId=50262519&menuId=10010101">
                             <img class="hot_img" src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/62/519/50262519_20230622172851_640.jpg/melon/resize/480/quality/80/optimize">
@@ -170,7 +190,7 @@
                                 </a>
                             
                         </li>
-                        <li>
+                        <li class="mg_li">
                             <!--아티스트별 링크-->
                             <a href="https://www.melon.com/video/detail2.htm?mvId=50262398&menuId=28010101">
                             <img class="hot_img"
@@ -185,7 +205,7 @@
                                 </a>
                            
                         </li>
-                        <li>
+                        <li class="mg_li">
                             <!--아티스트별 링크-->
                             <a href="https://www.melon.com/video/detail2.htm?mvId=50262476&menuId=10010101">
                             <img class="hot_img" src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/62/476/50262476_20230621152452_640.jpg/melon/resize/480/quality/80/optimize
@@ -200,7 +220,7 @@
                                 </a>
                            
                         </li>
-                        <li>
+                        <li class="mg_li">
                             <!--아티스트별 링크-->
                             <a href="https://www.melon.com/video/detail2.htm?mvId=50262599&menuId=10010101"></a>
                             <img class="hot_img" src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/62/599/50262599_20230626174710_640.jpg/melon/resize/480/quality/80/optimize
@@ -215,7 +235,7 @@
                                 </a>
                            
                         </li>
-                        <li>
+                        <li class="mg_li">
                             <!--아티스트별 링크-->
                             <a href="https://www.melon.com/video/detail2.htm?mvId=50262405&menuId=27120101">
                             <img class="hot_img" src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/62/405/50262405_20230623135725_640.jpg/melon/resize/480/quality/80/optimize
@@ -239,9 +259,21 @@
 
 
                 </div>
-                <div class="chart">
+                <div class="mg_chart">
                     <h2> 멜론차트 </h2>
+                    <ul class="mg_chart_ul">
+                        <li class="mg_chart_list">1</li>
+                        <li class="mg_chart_list">2</li>
+                        <li class="mg_chart_list">3</li>
+                        <li class="mg_chart_list">4</li>
+                        <li class="mg_chart_list">5</li>
+                        <li class="mg_chart_list">6</li>
+                        <li class="mg_chart_list">7</li>
+                        <li class="mg_chart_list">8</li>
+                        <li class="mg_chart_list">9</li>
+                        <li class="mg_chart_list">10</li>
 
+                    </ul>
 
                 </div>
                 <div class="notice"></div>

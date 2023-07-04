@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let movie = ["어바웃타임", "이터널션샤인", "신세계" , "범죄도시" , "씽"]
+
+        let result = JSON.stringify(movie);
+
+        localStorage.setItem("searchs" ,result);
+        
+
+        let out = localStorage.getItem("searchs");
+
+        let out1 = JSON.parse(out);
+
+        alert(out);
+        alert(out1);
+
+
+
+    </script>
+    
+</body>
+</html>

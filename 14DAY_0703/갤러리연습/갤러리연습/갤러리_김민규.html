@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .gallery-wrap{
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        margin: 0 auto;
+
+        position: relative;
+
+    }
+    .gallery{
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        background-image: url("https://i.namu.wiki/i/0uubPPIF2f9mKDb2fD19gMa77g2rUpoDnQ5Ekb9iqSNea2sfq9u9eWmRUGZFMIOy77XxnSI0HrIfTBj-U-wt4Q.webp");
+        background-size: cover;
+    }
+    .btn{
+        width: 50px;
+        height: 300px;
+
+        color: rgb(1, 90, 224);
+    }
+    
+    .preBtn{
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        text-align: center;
+        line-height: 300px;
+
+    }
+    .nextBtn{
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        text-align: center;
+        line-height: 300px;
+
+    }
+
+</style>
+<script>
+    let imgs = ["https://i.namu.wiki/i/0uubPPIF2f9mKDb2fD19gMa77g2rUpoDnQ5Ekb9iqSNea2sfq9u9eWmRUGZFMIOy77XxnSI0HrIfTBj-U-wt4Q.webp" , "https://blog.kakaocdn.net/dn/cDxKn6/btrykAnDChf/RKo1VjiPtiuy0zfjvwbMl1/img.jpg", "https://mblogthumb-phinf.pstatic.net/MjAyMjAzMTZfMjMg/MDAxNjQ3NDEyODYyMDQw.kPxedHpW55aWGj8K5hdDhNEfvDfGQI4yXUpeniqlCAIg.XfWNuLyXl1eTaHisWf93dJjZnXm052BPNuFMLw9muowg.JPEG.zxcv_0207/17f8d17aa9640522d.jpeg?type=w800", "https://i.ytimg.com/vi/wRCLOZepcWc/sddefault.jpg" ]
+    let i=0;
+    function nextImg(){
+
+        i++;
+        if(i>= imgs.length){
+        i=0;
+        }
+     
+        let gallery = document.querySelector(".gallery");
+        gallery.innerHTML="";
+        gallery.style.backgroundImage="url(' "+ imgs[i] +"')"
+        gallery.style.backgroundSize="cover";
+        gallery.style.backgroundPosition="center";
+       
+
+
+
+    }
+    function preImg(){
+        i--;
+        if(i<0){
+            i= imgs.length-1;
+        }
+        let gallery = document.querySelector(".gallery");
+        gallery.innerHTML="";
+        gallery.style.backgroundImage="url(' "+ imgs[i] +"')"
+        gallery.style.backgroundSize="cover";
+        gallery.style.backgroundPosition="center";
+
+    }
+
+</script>
+<body>
+
+
+    <div class="gallery-wrap">
+        <!-- 갤러리영역 -->
+        <div class="gallery"></div>
+        
+        
+        <!--버튼두개-->
+        <div class="preBtn  btn" onclick="preImg()"><</div>
+        <div class="nextBtn btn" onclick="nextImg()">></div>
+         
+    </div>
+    
+</body>
+</html>

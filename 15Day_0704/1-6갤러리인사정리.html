@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .slide-item{
+
+            display: none;
+        }
+
+
+    </style>
+    <script>
+
+        // let msg = ["여름", "프로젝트", "며칠전", "더웡"];
+            
+    
+        let msg=[]; 
+        let index = -1 ;
+       window.addEventListener("load",function(){
+            let slide_items=  document.querySelectorAll(".slide-item");// 해당 요소(element)들을 배열로 반환함     
+    
+            for(let i=0 ; i<slide_items.length ; i++){
+                let message = slide_items[i].innerHTML;
+                msg[i] = message;
+
+            }
+            console.log(msg);
+
+         //   setInterval(  콜백 , 밀리세컨드); // 브라우저에게 일정 간격으로 메서드를 호출할수 있게 하는기능
+         setInterval(changemMsg ,3000); 
+
+
+        });
+
+        function changemMsg(){
+
+            //alert("Adsa")
+           index++; // 0 시작
+           if(index >=msg.length){
+            index=0;
+           }
+           let slide = document.querySelector(".slide");
+           slide.innerHTML = msg[index];
+
+
+        }
+
+    
+        </script>
+
+
+</head>
+
+
+<body>
+
+
+    <div class="gallery-wrap">
+        <div class="gallery">
+            <div class="slide">
+                <div class="slide-item">여름</div>
+                <div class="slide-item">프로젝트</div>
+                <div class="slide-item">며칠전</div>
+                <div class="slide-item">더웡</div>
+            </div>
+        </div>
+            
+    </div>
+    
+
+    
+</body>
+</html>

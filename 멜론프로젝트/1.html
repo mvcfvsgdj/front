@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차트</title>
+</head>
+<body>
+    <h1>차트</h1>
+    <button onclick="showChart(1)">차트 1</button>
+    <button onclick="showChart(2)">차트 2</button>
+    <button onclick="showChart(3)">차트 3</button>
+
+    <div id="chartWrapper">
+        <ul id="chart1" class="chart">
+            <!-- 차트 1의 내용 -->
+            <li>차트 1 - 내용 1</li>
+            <li>차트 1 - 내용 2</li>
+            <li>차트 1 - 내용 3</li>
+            <li>차트 1 - 내용 4</li>
+            <li>차트 1 - 내용 5</li>
+            <li>차트 1 - 내용 6</li>
+            <li>차트 1 - 내용 7</li>
+            <li>차트 1 - 내용 8</li>
+            <li>차트 1 - 내용 9</li>
+            <li>차트 1 - 내용 10</li>
+        </ul>
+
+        <ul id="chart2" class="chart" style="display: none;">
+            <!-- 차트 2의 내용 -->
+            <li>차트 2 - 내용 1</li>
+            <li>차트 2 - 내용 2</li>
+            <li>차트 2 - 내용 3</li>
+            <li>차트 2 - 내용 4</li>
+            <li>차트 2 - 내용 5</li>
+            <li>차트 2 - 내용 6</li>
+            <li>차트 2 - 내용 7</li>
+            <li>차트 2 - 내용 8</li>
+            <li>차트 2 - 내용 9</li>
+            <li>차트 2 - 내용 10</li>
+        </ul>
+
+        <ul id="chart3" class="chart" style="display: none;">
+            <!-- 차트 3의 내용 -->
+            <li>차트 3 - 내용 1</li>
+            <li>차트 3 - 내용 2</li>
+            <li>차트 3 - 내용 3</li>
+            <li>차트 3 - 내용 4</li>
+            <li>차트 3 - 내용 5</li>
+            <li>차트 3 - 내용 6</li>
+            <li>차트 3 - 내용 7</li>
+            <li>차트 3 - 내용 8</li>
+            <li>차트 3 - 내용 9</li>
+            <li>차트 3 - 내용 10</li>
+        </ul>
+    </div>
+
+
+    <script>
+        let currentChart = 1;
+        const totalCharts = 3; // 전체 차트 개수
+
+        function showChart(chartNumber) {
+            const chartWrapper = document.getElementById('chartWrapper');
+
+            // 모든 차트 숨기기
+            const charts = chartWrapper.querySelectorAll('.chart');
+            charts.forEach(chart => {
+                chart.style.display = 'none';
+            });
+
+            // 선택한 차트 보여주기
+            const targetChart = document.getElementById(`chart${chartNumber}`);
+            targetChart.style.display = 'block';
+
+            currentChart = chartNumber;
+        }
+
+        // 차트 1 보여주기
+        showChart(1);
+    </script>
+</body>
+</html>

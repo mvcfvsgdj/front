@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let arr=["apple" , "banana" , "melon"];
+        let arr2= new Array(5); // 객체를 생성할때 사용하는 키워드
+        
+        //1차원 배열 , index를 하나 사용해야 요소(칸 = 변수)에 접근 가능하다.
+        console.log(arr[0]);
+
+
+        // 객체 : 속성 + 기능 
+        // 객체.속성 => 변수
+        // 객체.기능명() => 함수
+
+        //forEach()
+
+      /*  for(let i = 0 ; i<arr.length ; i++){ // i = 0 1 2 (반복제어하는 변수, 배열의 index로 사용할 변수) 
+            alert(arr[i] + " " + i);  //
+        } */
+
+        //=> forEach()
+
+        // arr.forEach( 콜백함수 );   
+        arr.forEach( function(item , a){  //배열 요소 값 , 배열의 index(첨자)
+            alert( item + " " + a); 
+
+        });
+
+        arr.forEach(func1); //콜백함수
+
+        function func1(a,b){ //배열의 요소내용 , 배열의 첨자
+            alert(a+"" +b);
+        }
+
+        arr.forEach(function(z ,x ){ //2개의 매개변수
+            alert(z+""+x);
+
+        
+        
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let search=["콩두유", "과자" , "수박"];
+
+
+        //저장하기 , 한 개로 저장
+
+        //Array -> 하나의 문자열로 바꿈 
+        
+        let result = JSON.stringify(search);
+
+       // console.log(search);
+       // console.log(result);
+
+        //문자로 바뀐 배열을 확인
+        let str = '["콩두유", "과자" , "수박"]';
+
+        localStorage.setItem("searchs", result);
+        
+
+        //꺼내기
+
+         let sSearchs = localStorage.getItem("searchs");
+         alert("저장소로부터 꺼낸 데이터" +sSearchs);
+        
+
+        let oSearchs =  JSON.parse(sSearchs);
+        console.log(oSearchs);
+
+    </script>
+    
+</body>
+</html>

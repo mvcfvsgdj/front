@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let arr = ["1", "2", "3", "4"];
+
+        let result = arr.splice(0, 1); // 0번쨰 index에서 한개 삭제
+                     // arr 배열 줄어듬
+                     // 삭제된 내용을 배열로 반환
+
+        let resultStr = result[0];
+
+        console.log(arr);
+        console.log(result);
+        console.log(resultStr);
+
+        let arr2 = ["11", "22", "33", "44"];
+
+        let result2 = arr2.splice(1, 1)[0];
+        console.log(arr2);
+        console.log(result2);
+
+
+    </script>
+
+</body>
+
+</html>
