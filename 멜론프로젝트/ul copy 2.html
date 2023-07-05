@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        padding: 0px;
+        margin: 0p;
+    }
+
+    ul {
+        border: 1px solid black;
+        width: 270px;
+    }
+
+    .li_1 {
+        border: 1px solid black;
+        display: flex;
+    }
+
+    .a1 {
+        display: block;
+        display: flex;
+        width: 70%;
+        border: 1px solid black;
+    }
+
+    a {
+        text-decoration: none;
+        color: gray;
+    }
+
+    .a2 {
+        display: none;
+        width: 48px;
+        height: 48px;
+    }
+
+    .a0 {
+        width: 30%;
+    }
+</style>
+
+<script>
+    function showList(event) {
+        let li = event.target.closest('.li_1');
+        let image = li.querySelector('.a2');
+        let text = li.querySelector('.a3');
+        image.style.display = "block";
+        
+    }
+
+    function hideList(event) {
+        let li = event.target.closest('.li_1');
+        let image = li.querySelector('.a2');
+        let text = li.querySelector('.a3');
+        image.style.display = "none";
+        
+    }
+</script>
+
+<body>
+    <ul>
+        <li class="li_1">
+            <div class="a0">1-0</div>
+            <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <div class="a2"><img
+                        src="https://cdnimg.melon.co.kr/cm2/album/images/112/11/297/11211297_20230410151046_500.jpg/melon/quality/80/resize/48/optimize"></div>
+                <div class="a3">love lve</div>
+            </a>
+        </li>
+        <li class="li_1">
+            <div class="a0">1-0</div>
+            <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <div class="a2"><img
+                        src="ze"></div>
+                <div class="a3">2</div>
+            </a>
+        </li>
+        <li class="li_1">
+            <div class="a0">1-0</div>
+            <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <div class="a2"><img
+                        src="htimize"></div>
+                <div class="a3">3</div>
+            </a>
+        </li>
+        <li class="li_1">
+            <div class="a0">1-0</div>
+            <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <div class="a2"><img
+                        src="h297mize"></div>
+                <div class="a3">4</div>
+            </a>
+        </li>
+        <li class="li_1">
+            <div class="a0">1-0</div>
+            <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <div class="a2"><img
+                        src="he"></div>
+                <div class="a3">5</div>
+            </a>
+        </li>
+        <li class="li_1">
+            <div class="a0">1-0</div>
+            <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <div class="a2"><img
+                        src="he"></div>
+                <div class="a3">5</div>
+            </a>
+        </li>
+        <li class="li_1">
+            <div class="a0">1-0</div>
+            <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <div class="a2"><img
+                        src="he"></div>
+                <div class="a3">5</div>
+            </a>
+        </li>
+        <li class="li_1">
+            <div class="a0">1-0</div>
+            <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <div class="a2"><img
+                        src="he"></div>
+                <div class="a3">5</div>
+            </a>
+        </li>
+        <li class="li_1">
+            <div class="a0">1-0</div>
+            <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <div class="a2"><img
+                        src="he"></div>
+                <div class="a3">5</div>
+            </a>
+        </li>
+        <li class="li_1">
+            <div class="a0">1-0</div>
+            <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <div class="a2"><img
+                        src="he"></div>
+                <div class="a3">5</div>
+            </a>
+        </li>
+    </ul>
+</body>
+
+</html>

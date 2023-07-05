@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    *{
+        padding: 0px;
+        margin: 0p;
+    }
+    ul {
+        border: 1px solid black;
+        width: 270px;
+    }
+
+    .li_1 {
+        border: 1px solid black;
+        display: flex;
+    }
+
+    .a1 {
+        display: block;
+        display: flex;
+        width: 70%;
+        border:1px solid black;
+    }
+
+    a{
+       text-decoration: none;
+       color: gray;
+    }
+
+    .a2 {
+        display: none;
+        width: 48px;
+        height: 48px;
+        
+    }
+
+    .a0{
+        width: 30%;
+    }
+
+
+</style>
+
+<script>
+    function showList() {
+        let img = document.querySelector("#ho1");
+        let a3 = document.querySelector("#ho2");
+        img.style.display = "block";
+        
+    }
+
+    function hideList() {
+        let img = document.querySelector("#ho1");
+        let a3 = document.querySelector("#ho2");
+        img.style.display = "none";
+       
+    }
+</script>
+
+<body>
+    <ul>
+        <li class="li_1">
+            <div class="a0">1-0</div>
+            <div  href="#" class="a1" onmouseover="showList()" onmouseout="hideList()">
+                <div class="a2" id="ho1"><img src="https://cdnimg.melon.co.kr/cm2/album/images/112/11/297/11211297_20230410151046_500.jpg/melon/quality/80/resize/48/optimize" ></div>
+                <div class="a3" id="ho2">
+                    <div><a id="4" href="$">love</a></div>
+                    <div><a id="5" href="^">lve</a></div>
+            </div>
+        </li>
+        <li class="li_1">
+            <div class="a0">1-0</div>
+            <div  href="#" class="a1" onmouseover="showList()" onmouseout="hideList()">
+                <div class="a2" id="ho1"><img src="https://cdnimg.melon.co.kr/cm2/album/images/112/11/297/11211297_20230410151046_500.jpg/melon/quality/80/resize/48/optimize" ></div>
+                <div class="a3" id="ho2">
+                    <div><a id="4" href="$">love</a></div>
+                    <div><a id="5" href="^">lve</a></div>
+            </div>
+        </li>
+
+
+</body>
+
+</html>

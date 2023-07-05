@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차트</title>
+</head>
+
+<style>
+    #mg_chartwrap {
+        overflow-y: auto;
+        max-height: 416px;
+        height: 416px;
+        width: 276px;
+        border: 1px solid black;
+    }
+
+    * {
+        padding: 0px;
+        margin: 0p;
+    }
+
+    ul {
+        border: 1px solid black;
+        width: 270px;
+    }
+
+    .li_1 {
+        border: 1px solid black;
+        display: flex;
+    }
+
+    .a1 {
+        display: block;
+        display: flex;
+        width: 80%;
+        border: 1px solid black;
+    }
+
+    a {
+        text-decoration: none;
+        color: gray;
+    }
+
+    .a2 {
+        display: none;
+        width: 48px;
+        height: 48px;
+    }
+
+    .a0 {
+        width: 20%;
+    }
+</style>
+
+<body>
+    <div id="mg_chartwrap">
+        <button onclick="showChart(1)">TOP100</button>
+        <button onclick="showChart(2)">POP</button>
+        <button onclick="showChart(3)">☆ 아티스트</button>
+        <ul id="chart1" class="chart" style="list-style: none;">
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img
+                            src="https://cdnimg.melon.co.kr/cm2/album/images/112/11/297/11211297_20230410151046_500.jpg/melon/quality/80/resize/48/optimize">
+                    </div>
+                    <div class="a3">love lve</div>
+                </a>
+            </li>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">2</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">3</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">4</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">2</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">5</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">6</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">7</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">8</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">9</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">10</div>
+                </a>
+        </ul>
+
+        <ul id="chart2" class="chart" style="display: none;">
+            <!-- 차트 2의 내용 -->
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img
+                            src="https://cdnimg.melon.co.kr/cm2/album/images/112/11/297/11211297_20230410151046_500.jpg/melon/quality/80/resize/48/optimize">
+                    </div>
+                    <div class="a3">pop</div>
+                </a>
+            </li>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">2</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">3</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">4</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">2</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">5</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">6</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">7</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">8</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">9</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">10</div>
+                </a>
+        </ul>
+
+        <ul id="chart3" class="chart" style="display: none;">
+            <!-- 차트 3의 내용 -->
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img
+                            src="https://cdnimg.melon.co.kr/cm2/album/images/112/11/297/11211297_20230410151046_500.jpg/melon/quality/80/resize/48/optimize">
+                    </div>
+                    <div class="a3">즐겨찾기</div>
+                </a>
+            </li>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">2</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">3</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">4</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">2</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">5</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">6</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">7</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">8</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">9</div>
+                </a>
+            <li class="li_1">
+                <div class="a0">1-0</div>
+                <a href="#" class="a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="a2"><img src="e">
+                    </div>
+                    <div class="a3">10</div>
+                </a>
+        </ul>
+    </div>
+
+    <script>
+        let currentChart = 1;
+        let totalCharts = 3; // 전체 차트 개수
+
+        function showChart(chartNumber) {
+            let chartWrapper = document.getElementById('mg_chartwrap');
+
+            // 모든 차트 숨기기
+            let charts = chartWrapper.querySelectorAll('.chart');
+            charts.forEach(chart => {
+                chart.style.display = 'none';
+            });
+
+            // 선택한 차트 보여주기
+            let targetChart = document.getElementById("chart" + chartNumber);
+            targetChart.style.display = 'block';
+
+            currentChart = chartNumber;
+        }
+
+        // 마우스로 생략된 내용 표시
+
+        function showList(event) {
+            let li = event.target.closest('.li_1');
+            let image = li.querySelector('.a2');
+            let text = li.querySelector('.a3');
+            image.style.display = "block";
+
+        }
+        // 마우스 숨기기
+        function hideList(event) {
+            let li = event.target.closest('.li_1');
+            let image = li.querySelector('.a2');
+            let text = li.querySelector('.a3');
+            image.style.display = "none";
+
+        }
+        // 초기에는 차트 1 보여주기
+        showChart(1);
+    </script>
+</body>
+
+</html>

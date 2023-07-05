@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        padding: 0px;
+        margin: 0p;
+    }
+    #mg_chartwrap {
+    overflow-y: auto;
+    max-height: 416px;
+    height: 416px;
+    width: 276px;
+    border: 1px solid black;
+}
+
+    .mg_chart {
+        border: 1px solid black;
+        width: 270px;
+    }
+
+    .mg_li_1 {
+        border: 1px solid black;
+        display: flex;
+    }
+
+    .mg_a1 {
+        display: block;
+        display: flex;
+        width: 207px;
+        border: 1px solid black;
+    }
+
+    a {
+        text-decoration: none;
+        color: gray;
+    }
+
+    .mg_a2 {
+        display: none;
+        width: 48px;
+        height: 48px;
+    }
+
+    .mg_a0 {
+        width: 65px;
+    }
+</style>
+
+<script>
+
+    showChart(1);
+    let currentChart = 1;
+    const totalCharts = 3; // 전체 차트 개수
+
+    function showChart(chartNumber) {
+        let chartWrapper = document.getElementById('.mg_chartwrap');
+
+        // 모든 차트 숨기기
+        let charts = chartWrapper.querySelectorAll('.mg_chart');
+        charts.forEach(chart => {
+            chart.style.display = 'none';
+        });
+
+        // 선택한 차트 보여주기
+        let targetChart = document.getElementById("mg_chart" + chartNumber);
+        targetChart.style.display = 'block';
+
+        currentChart = chartNumber;
+    }
+
+    // 차트 1 보여주기
+
+
+    function showList(event) {
+        let li = event.target.closest('.mg_li_1');
+        let image = li.querySelector('.mg_a2');
+        let text = li.querySelector('.mg_a3');
+        image.style.display = "block";
+        text=e
+
+    }
+
+    function hideList(event) {
+        let li = event.target.closest('.mg_li_1');
+        let image = li.querySelector('.mg_a2');
+        let text = li.querySelector('.mg_a3');
+        image.style.display = "none";
+
+    }
+</script>
+
+<body>
+
+    <div class="mg_chart main">
+        
+        멜론차트>     2023.07.05 14:00 기준
+        <button onclick="showChart(1)">TOP100</button>
+        <button onclick="showChart(2)">POP</button>
+        <button onclick="showChart(3)">☆ 아티스트</button>
+        <ul id="chart1" class="mg_chart" style="list-style: none;">
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img
+                            src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                    </div>
+                    <div class="mg_a3">Queencard 여자(아이들)</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="ze"></div>
+                    <div class="mg_a3">2</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">3</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">4</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">5</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">6</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">7</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">8</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">9</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">10</div>
+                </a>
+            </li>
+    
+
+        </ul>
+        <ul id="chart2" class="mg_chart" style="display: none;">
+            <!-- 차트 2의 내용 -->
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img
+                            src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                    </div>
+                    <div class="mg_a3">팝송</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="ze"></div>
+                    <div class="mg_a3">2</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">3</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">4</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">5</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">6</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">7</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">8</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">9</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">10</div>
+                </a>
+            </li>
+        </ul>
+
+        <ul id="chart3" class="mg_chart" style="display: none;">
+            <!-- 차트 3의 내용 -->
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img
+                            src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                    </div>
+                    <div class="mg_a3">즐겨찾기</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="ze"></div>
+                    <div class="mg_a3">2</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">3</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">4</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">5</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">6</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">7</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">8</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">9</div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0">1-0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img src="htimize"></div>
+                    <div class="mg_a3">10</div>
+                </a>
+            </li>
+        </ul>
+        <div class="mg_chart_fot"><button>셔플듣기</button> <a href="">더보기</a></div>
+    </div>
+</body>
+
+</html>

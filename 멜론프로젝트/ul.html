@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    ul{
+        border: 1px solid black;
+        width: 270px;
+        
+    }
+    .li_1{
+        border: 1px solid black;
+        display: flex;
+  
+
+    }
+    .a1{
+        display: flex;
+    }
+    .a2{
+        display: none;
+        width: 48px;
+        height: 48px
+        
+    }
+
+
+
+</style>
+
+<script> 
+    function showList(){
+        let img = document.querySelector(".a2")
+
+        let li = document.querySelector(".a3")
+        li.style.height="70px"
+        img.style.display="block";
+        title.innerHTML="가수영역"
+    }
+    function hideList(){
+        let img = document.querySelector(".a2")
+        let li = document.querySelector(".a3")
+        img.style.display="none";
+        
+    }
+
+</script>
+<body>
+    <ul>
+        <li class="li_1" >
+                <div class="a0">1-0</div>
+                <div class="a1" onmouseover=showList()>
+                    <div class="a2"> <img src="00"></div>
+                    <div class="a3">가수영역</div>
+                </div>
+               
+                
+        </li>
+    </ul>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+
+.wrap{
+    width: 300px;
+    height :300px;
+    border:1px solid black;
+}
+
+.my_song{
+           white-space: nowrap;  /*텍스트 줄바꿈 하지 않음 */         
+            overflow: hidden;
+            text-overflow: ellipsis;  /* 잘린내용이 보이지 않음*/   
+}
+    </style>
+</head>
+<body>
+
+    <ul class="wrap">
+        <li>
+            <div></div>
+            <div class="my_song"> <a href="#">i don't like song i don't like songi don't like songi don't like song</a></div>
+        </li>
+        <li></li>
+        <li></li>
+
+
+    </ul>
+    
+</body>
+</html>

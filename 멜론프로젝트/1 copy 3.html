@@ -31,12 +31,7 @@
         display: none;
         
     }
-    .mg_hotchart_list:hover .mg_hot_img {
-    display: inline-block; /* 마우스 커서 올라갔을 때 이미지 보이기 */
-}
-    .mg_hotchart_list {
-    vertical-align: middle;
-}
+    
 
 </style>
 
@@ -50,27 +45,31 @@
     <button onclick="showChart(3)">☆ 아티스트</button>
         <ul id="chart1" class="chart" style="list-style:  none;">
             <!-- 차트 1의 내용 -->
-            <li>1 -0 <a onmouseover="showFull(this)" class="mg_hotchart_list" href="">
-                <img class="mg_hot_img" src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
-                퀸카 (Qunncard) 여자아이들</a></li>
-            <li>2 -0  <a onmouseover="showFull(this)" class="mg_hotchart_list" href="">
-                I AM IVE(아이브)</a></li>
-            <li>3 -0 <a onmouseover="showFull(this)" class="mg_hotchart_list" href="">
-                Spicy aespa </a></li>
-            <li>4 -0 <a onmouseover="showFull(this)"class="mg_hotchart_list" href="">
-                Kitsch IVE(아이브)</a> </li>
-            <li>5 -0 <a onmouseover="showFull(this)" class="mg_hotchart_list" href="">
-                헤어지자 말해요 박재정</a></li>
-            <li>6 -0  <a onmouseover="showFull(this)" class="mg_hotchart_list" href="">
-                Hype boy NewJeans </a></li>
-            <li>7 -0  <a onmouseover="showFull(this)" class="mg_hotchart_list" href="">
-                모래 알갱이 임영웅</a></li>
-            <li>8 -0  <a onmouseover="showFull(this)"class="mg_hotchart_list" href="">
-                손오공 세븐틴 (SEVENTEEN)</a></li>
-            <li>9 -0  <a onmouseover="showFull(this)" class="mg_hotchart_list" href="">
-                Ditto NewJeans</a></li>
-            <li>10 -0 <a onmouseover="showFull(this)" class="mg_hotchart_list" href="">
-                꽃 지수 (JISOO)</a>  </li>
+            <li class="mg_hot_li">
+
+                <div class="mg_hot_li1">
+
+                    <span class="hot_span">1 -0</span>
+
+                </div>
+
+               <div class="mg_chart_img">
+
+                <img class="mg_hot_img" src="22"></div> 
+
+                <div class="mg_chart_text">
+                    <a href="">퀸카 (Qunncard) 여자아이들</a></div>
+            </li>
+
+                <li>2 -0 </li>
+                <li>3 -0 </li>
+                <li>4 -0 </li>
+                <li>5 -0 </li>
+                <li>6 -0 </li>
+                <li>7 -0 </li>
+                <li>8 -0 </li>
+                <li>9 -0 </li>
+                <li>10 -0 </li>
         </ul>
 
         <ul id="chart2" class="chart" style="display: none;">
@@ -123,21 +122,11 @@
             currentChart = chartNumber;
         }
         // 마우스로 생략된 내용표시
-        function showList(event) {
-        let li = event.target.closest('.li_1');
-        let image = li.querySelector('.a2');
-        let text = li.querySelector('.a3');
-        image.style.display = "block";
+        function showFull(element) {
+        element.style.whiteSpace = 'normal';
+        element.style.overflow = 'visible';
+        element.style.textOverflow = 'clip';}
 
-    }
-
-    function hideList(event) {
-        let li = event.target.closest('.li_1');
-        let image = li.querySelector('.a2');
-        let text = li.querySelector('.a3');
-        image.style.display = "none";
-
-    }
         // 초기에는 차트 1 보여주기
         showChart(1);
     </script>

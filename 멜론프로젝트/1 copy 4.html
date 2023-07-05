@@ -16,7 +16,7 @@
     border: 1px solid black;
 }
 
-.chart li {
+#chart1 li {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -24,66 +24,47 @@
     align-items: center;
 }
 
-.mg_chart_span {
-    width: 50px;
-    text-align: center;
-}
-
-.mg_chart_img {
-    margin-right: 10px;
+.mg_hot_img {
     width: 48px;
     height: 48px;
-    overflow: hidden;
-}
-
-.mg_hot_img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     display: none;
 }
 
-.mg_hot_text {
+.mg_chart_text {
     flex-grow: 1;
-    display: none;
-    line-height: 1.2;
     overflow: hidden;
-    text-overflow: ellipsis;
 }
 
-.mg_hotchart_list:hover .mg_hot_img {
-    display: inline-block;
+.mg_chart_text a {
+    text-decoration: none;
+    color: black;
 }
 
-.mg_hotchart_list:hover .mg_hot_text {
-    display: block;
-    white-space: normal;
-    text-overflow: initial;
-    overflow: visible;
+.mg_chart_text a:hover {
+    text-decoration: underline;
 }
 
-.mg_hot_text a {
-    display: flex;
-    line-height: 1.2;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
 </style>
 
 <body>
+
     <div id="mg_chartwrap">
+
         <button onclick="showChart(1)">TOP100</button>
         <button onclick="showChart(2)">POP</button>
         <button onclick="showChart(3)">☆ 아티스트</button>
+
         <ul id="chart1" class="chart" style="list-style: none;">
             <!-- 차트 1의 내용 -->
-            <li>
-                <div class="mg_chart_span"><span>1-0</span></div>
-                <div class="mg_chart_img">
-                    <img class="mg_hot_img" onmouseover="showFull(this.parentNode.parentNode)" src="3">
+            <li class="mg_hot_li">
+                <div class="mg_hot_li1">
+                    <span class="hot_span">1 -0</span>
                 </div>
-                <div class="mg_hot_text">
-                    <a class="mg_hotchart_list" onmouseover="showFull(this.parentNode.parentNode)">(퀸카 Qunncard) 여자아이들</a>
+                <div class="mg_chart_img">
+                    <img class="mg_hot_img" src="https://example.com/22.jpg">
+                </div>
+                <div class="mg_chart_text">
+                    <a href="https://example.com/artist1">퀸카 (Qunncard) 여자아이들</a>
                 </div>
             </li>
             <li>2 -0</li>
@@ -126,6 +107,7 @@
         </ul>
     </div>
 
+
     <script>
         let currentChart = 1;
         let totalCharts = 3; // 전체 차트 개수
@@ -148,18 +130,18 @@
 
         // 마우스로 생략된 내용 표시
         function showFull(element) {
-            // 이미지 표시
-            let imgElement = element.parentNode.querySelector('.mg_hot_img');
-            imgElement.style.display = 'inline-block';
+            element.style.whiteSpace = 'normal';
+            element.style.overflow = 'visible';
+            element.style.textOverflow = 'clip';
+        }
 
-            // 텍스트 표시
-            let textElement = element.parentNode.querySelector('.mg_hot_text');
-            textElement.style.display = 'block';
+        // 이미지 보이기/가리기
+        function toggleImage(element) {
+            let imgElement = element.querySelector('.mg_hot_img');
+            imgElement.style.display = (imgElement.style.display === 'none') ? 'inline-block' : 'none';
         }
 
         // 초기에는 차트 1 보여주기
         showChart(1);
     </script>
 </body>
-
-</html>
