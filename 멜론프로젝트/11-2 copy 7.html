@@ -9,11 +9,12 @@
 
 <style>
     #mg_chartwrap {
-        overflow-y: auto;
+        overflow-y: hidden;
         max-height: 416px;
         height: 416px;
         width: 276px;
         border: 1px solid black;
+        position: relative;
     }
 
     * {
@@ -27,7 +28,7 @@
    }
    .mg_chart_btn{
     width: 94px;
-    height: 28px;
+    height: 34px;
     background-color: white;
     border: 0px;
     border-right: 0.5px solid gray;
@@ -69,40 +70,62 @@
     .mg_li_1 {
         border-top: 0.5px solid rgb(177, 177, 177);
         display: flex;
+   
         
     }
 
 
     .mg_a1 {
         display:flex;
+        
         width: 80%;
-        justify-content: center;
+
         text-decoration: none;
-        color: gray;
+        color: black ;
+        text-align: left; 
+    
  
     }
-
-
-
-    .mg_a2 {
+    .mg_a1:hover .mg_a1_text {
         display: none;
-        width: 48px;
-        height: 48px;
     }
 
+  
+
+    .mg_a2 {
+        display: flex;
+        width: 207px;
+        height: 59px;
+        display: none;
+        text-align: justify;
+
+    }
+
+    .mg_a2_img {
+        display: flex;
+        width: 48px;
+        height: 48px;
+        margin-right: 10px;
+    }
+    .mg_a2_text {
+        width: 200px;
+     
+
+    }
 
     /* 아티스트 / 곡 영역 */
     .mg_a3 {
     display: flex;
-
-    white-space: nowrap;  /*텍스트 줄바꿈 하지 않음 */   
-    overflow: hidden; /* 내용이 넘칠 경우 생략 */
-    text-overflow: ellipsis; /* 생략된 부분에 "..." 표시 */
-    text-align: center; 
+        
+   
+   
     
     }
     .mg_a4{
-        margin-left: 40px;
+        
+        margin-left: 10px;
+        padding-left: 20px;
+        float: right;
     }
     .mg_song{
         text-decoration-line: none;
@@ -111,13 +134,25 @@
     }
     .mg_artist{
         text-decoration-line: none;
+
+
     }
     /* 셔플듣기 더보기 영역*/
     .mg_chart_fot{
-
-
+        position: absolute;
+        bottom: 10px;
+        display: flex;
+        width: 100%;
+        height: 39px;
     }
-
+    .mg_chart_for1{
+        width: 50%;
+    }
+    .mg_chart_for2{
+        width: 50%;
+        text-align: right;
+    }
+ 
     
 </style>
 
@@ -134,83 +169,90 @@
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>  - 0</div>
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                   <span class="mg_a1_text">퀸카(Qunncard) 여자아이들</span> 
+                    <div class="mg_a2"><div class="mg_a2_img"><img
+                            src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <a href="429"><div style="width: 100px;">퀸카</div></a>
+                                <a href="139">여자아이들</a>
+                                </div>
+                        </div>
+                        
+                    <div class="mg_a3"></div>
+                        </div>
+                </div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_1st"><i>2</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/11/297/11211297_20230410151046_500.jpg/melon/quality/80/resize/48/optimize">
                     </div>
-                    <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
+                    <div class="mg_a3"><a class="mg_song" href="">I AM</a><div class="mg_a4"><a class="mg_artist" href="">IVE (아이브)</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
-                <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>- 0</div>
+                <div class="mg_a0"><a class="mg_chart_1st"><i>3</i></a>- 0</div>
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
-                            src="2">
-                    </div>
-                    <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
-            </li>
-            <li class="mg_li_1">
-                <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
-                    <div class="mg_a2"><img
-                        src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        src="https://cdnimg.melon.co.kr/cm2/album/images/112/34/678/11234678_20230502162327_500.jpg/melon/quality/80/resize/48/optimize"></div>
+                        <div class="mg_a3"><a class="mg_song" href="">이브,프시케 그...</a><div class="mg_a4"><a class="mg_artist" href="">LE SEERA...</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>4</i></a>- 0</div>
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
-                        src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        src="https://cdnimg.melon.co.kr/cm2/album/images/112/36/264/11236264_20230508184331_500.jpg/melon/quality/80/resize/48/optimize"></div>
+                        <div class="mg_a3"><a class="mg_song" href="">Spicy</a><div class="mg_a4"><a class="mg_artist" href="">aespa</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>5</i></a>- 0</div>
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
-                        src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        src="https://cdnimg.melon.co.kr/cm2/album/images/112/27/533/11227533_20230419162238_500.jpg/melon/quality/80/resize/48/optimize"></div>
+                        <div class="mg_a3"><a class="mg_song" href="">헤어지자 말해요</a><div class="mg_a4"><a class="mg_artist" href="">박재정</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>6</i></a>- 0</div>
                 <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
-                        src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        src="https://cdnimg.melon.co.kr/cm2/album/images/112/11/297/11211297_20230410151046_500.jpg/melon/quality/80/resize/48/optimize"></div>
+                        <div class="mg_a3"><a class="mg_song" href="">Kitsch</a><div class="mg_a4"><a class="mg_artist" href="">IVE (아이브)</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>7</i></a>- 0</div>
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
-                        src="2"> </div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        src="https://cdnimg.melon.co.kr/cm2/album/images/107/35/654/10735654_20211008114339_500.jpg/melon/quality/80/resize/48/optimize"> </div>
+                        <div class="mg_a3"><a class="mg_song" href="">사랑은 늘 도망가</a><div class="mg_a4"><a class="mg_artist" href="">임영웅</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>8</i></a>- 0</div>
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
-                        src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        src="https://cdnimg.melon.co.kr/cm2/album/images/110/11/565/11011565_20220801102637_500.jpg/melon/quality/80/resize/48/optimize"></div>
+                        <div class="mg_a3"><a class="mg_song" href="">Hype boy</a><div class="mg_a4"><a class="mg_artist" href="">NewJeans</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>9</i></a>- 0</div>
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
-                        src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        src="https://cdnimg.melon.co.kr/cm2/album/images/112/58/233/11258233_20230605094802_500.jpg/melon/quality/80/resize/48/optimize"></div>
+                        <div class="mg_a3"><a class="mg_song" href="">모래알갱이</a><div class="mg_a4"><a class="mg_artist" href="">임영웅</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>10</i></a>- 0</div>
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
-                        src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        src="https://cdnimg.melon.co.kr/cm2/album/images/112/11/297/11211297_20230410151046_500.jpg/melon/quality/80/resize/48/optimize"></div>
+                        <div class="mg_a3"><a class="mg_song" href="">UNFOGIVEN (f...</a><div class="mg_a4"><a class="mg_artist" href="">LE SERA...</a></div></div>
                 </div>
             </li>
 
@@ -224,7 +266,7 @@
                     <div class="mg_a2"><img
                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/11/297/11211297_20230410151046_500.jpg/melon/quality/80/resize/48/optimize">
                     </div>
-                    <div class="mg_a3"><a class="mg_song" href="">좋다고말해 </a><br><a class="mg_artist" href="">Charlie Puth</a></div>
+                    <div class="mg_a3"><a class="mg_song" href="">좋2해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -233,7 +275,7 @@
                     <div class="mg_a2"><img
                             src="2">
                     </div>
-                    <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                    <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -241,7 +283,7 @@
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -249,7 +291,7 @@
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -257,7 +299,7 @@
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -265,7 +307,7 @@
                 <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -273,7 +315,7 @@
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"> </div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -281,7 +323,7 @@
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -289,7 +331,7 @@
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">ir </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -297,7 +339,7 @@
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
 
@@ -307,11 +349,11 @@
             <!-- 차트 3의 내용 -->
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>  - 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <div  class="mg_a1" onmouseover="showList(event,0)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/11/297/11211297_20230410151046_500.jpg/melon/quality/80/resize/48/optimize">
                     </div>
-                    <div class="mg_a3"><a class="mg_song" href="">좋다고말해 </a><br><a class="mg_artist" href="">Charlie Puth</a></div>
+                    <div class="mg_a3"><a class="mg_song" href="">좋다3말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -320,7 +362,7 @@
                     <div class="mg_a2"><img
                             src="2">
                     </div>
-                    <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                    <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -328,7 +370,7 @@
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -336,7 +378,7 @@
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -344,7 +386,7 @@
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -352,7 +394,7 @@
                 <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -360,7 +402,7 @@
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"> </div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -368,7 +410,7 @@
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -376,7 +418,7 @@
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
             <li class="mg_li_1">
@@ -384,12 +426,15 @@
                 <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">r </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                        <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
                 </div>
             </li>
 
         </ul>
-        <div class="mg_chart_fot"><button>셔플듣기</button> <a href="">더보기</a></div>
+        <div class="mg_chart_fot">
+            <div class="mg_chart_for1"><button>셔플듣기</button>
+            </div><div class="mg_chart_for2"><a href="">더보기></a></div>
+        </div>
     </div>
 
     <script>
@@ -413,14 +458,23 @@
         }
 
         // 마우스로 생략된 내용 표시
+        let mg_select = 0;
+        
+    
+        function showList(event,index) {
 
-        function showList(event) {
+             mg_select = index;
+     
+            
             let mg_li = event.target.closest('.mg_li_1');
             let mg_image = mg_li.querySelector('.mg_a2');
             let mg_text = mg_li.querySelector('.mg_a3');
             let mg_song = mg_li.querySelector('.mg_song');
+            
+           
+            mg_text.style.display = "none";
             mg_image.style.display = "block";
-            mg_text.style.whiteSpace = "normal";
+            
             mg_song.style.overflow = "ellipsis";
 
            
@@ -432,12 +486,14 @@
             let mg_li = event.target.closest('.mg_li_1'); //target 속성은 링크된 문서를 클릭했을 때 문서가 열릴 위치 .closest 속성은 가장 가까운 걸 찾음
             let mg_image = mg_li.querySelector('.mg_a2');
             let mg_text = mg_li.querySelector('.mg_a3');
-           
-            mg_image.style.display = "none";
-            mg_text.style.whiteSpace = "nowrap";
+            mg_text.style.display = "block";
+           mg_image.style.display = "none";
+           mg_text.style.whiteSpace = "nowrap";
 
         }
         // 초기에는 차트 1 보여주기
+
+        
         showChart(1);
 
     </script>

@@ -9,7 +9,7 @@
 
 <style>
     #mg_chartwrap {
-        overflow-y: auto;
+        overflow-y: hidden;
         max-height: 416px;
         height: 416px;
         width: 276px;
@@ -69,17 +69,22 @@
     .mg_li_1 {
         border-top: 0.5px solid rgb(177, 177, 177);
         display: flex;
-        
+        flex-wrap: nowrap; /* 내용이 넘치지 않도록 줄바꿈 방지 */
+    align-items: center; /* 수직 가운데로 정렬 */
+    white-space: nowrap; /* 텍스트 줄바꿈을 하지 않음 */
+    overflow: hidden; /* 내용이 넘칠 경우 생략 */
+    text-overflow: ellipsis; /* 생략된 부분에 "..." 표시 */
+
     }
 
 
     .mg_a1 {
         display:flex;
+        flex-direction: row;
         width: 80%;
         justify-content: center;
         text-decoration: none;
         color: gray;
- 
     }
 
 
@@ -88,21 +93,20 @@
         display: none;
         width: 48px;
         height: 48px;
+        padding: 5px;
     }
 
 
     /* 아티스트 / 곡 영역 */
     .mg_a3 {
-    display: flex;
-
-    white-space: nowrap;  /*텍스트 줄바꿈 하지 않음 */   
+        display: flex;
+    flex-direction: column; /* 세로로 정렬하기 위해 컬럼 방향으로 설정 */
+    align-items: center; /* 수직 가운데로 정렬 */
+    white-space: nowrap; /* 텍스트 줄바꿈을 하지 않음 */
     overflow: hidden; /* 내용이 넘칠 경우 생략 */
     text-overflow: ellipsis; /* 생략된 부분에 "..." 표시 */
-    text-align: center; 
+    text-align: center;
     
-    }
-    .mg_a4{
-        margin-left: 40px;
     }
     .mg_song{
         text-decoration-line: none;
@@ -133,85 +137,86 @@
         <ul id="chart1" class="chart" style="list-style: none;">
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>  - 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/11/297/11211297_20230410151046_500.jpg/melon/quality/80/resize/48/optimize">
+                            
                     </div>
-                    <div class="mg_a3"><a class="mg_song" href="">좋다고말해</a><div class="mg_a4"><a class="mg_artist" href="">Charlie Puth</a></div></div>
-                </div>
+                    <div class="mg_a3"><a class="mg_song" href="">좋다고말해 </a><br><a class="mg_artist" href="">Charlie Puth</a></div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                             src="2">
                     </div>
                     <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>4</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>5</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>6</i></a>- 0</div>
-                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>7</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"> </div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>8</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>9</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>10</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
 
         </ul>
@@ -219,86 +224,88 @@
         <ul id="chart2" class="chart" style="display: none;">
             <!-- 차트 2의 내용 -->
             <li class="mg_li_1">
-                <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>  - 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>- 0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/11/297/11211297_20230410151046_500.jpg/melon/quality/80/resize/48/optimize">
-                    </div>
-                    <div class="mg_a3"><a class="mg_song" href="">좋다고말해 </a><br><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                            
+                        </div>
+                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                             src="2">
                     </div>
                     <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                    
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>4</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>5</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>6</i></a>- 0</div>
-                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>7</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"> </div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>8</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>9</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
-                    <div class="mg_a2"><img
-                        src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">ir </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
-            </li>
-            <li class="mg_li_1">
-                <div class="mg_a0"><a class="mg_chart_2st"><i>10</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>10</i></a>- 0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a2"><img
+                        src="2"></div>
+                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                </a>
             </li>
 
         </ul>
@@ -306,87 +313,88 @@
         <ul id="chart3" class="chart" style="display: none;">
             <!-- 차트 3의 내용 -->
             <li class="mg_li_1">
-                <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>  - 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>- 0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/11/297/11211297_20230410151046_500.jpg/melon/quality/80/resize/48/optimize">
                     </div>
-                    <div class="mg_a3"><a class="mg_song" href="">좋다고말해 </a><br><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                    <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                </a>
             </li>
             <li class="mg_li_1">
-                <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a></a>- 0</div>
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                             src="2">
                     </div>
                     <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>4</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>5</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>6</i></a>- 0</div>
-                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>7</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"> </div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>8</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>9</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
                         <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                </a>
             </li>
             <li class="mg_li_1">
                 <div class="mg_a0"><a class="mg_chart_2st"><i>10</i></a>- 0</div>
-                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                <a href="#" class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
                     <div class="mg_a2"><img
                         src="2"></div>
-                        <div class="mg_a3"><a class="mg_song" href="">r </a><a class="mg_artist" href="">Charlie Puth</a></div>
-                </div>
+                        <div class="mg_a3"><a class="mg_song" href="">i don't think that i like her </a><a class="mg_artist" href="">Charlie Puth</a></div>
+                </a>
             </li>
+
 
         </ul>
         <div class="mg_chart_fot"><button>셔플듣기</button> <a href="">더보기</a></div>

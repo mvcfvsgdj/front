@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        outline: 1px solid black;
+      }
+      .select {
+        width: 200px;
+        height: 20px;
+      }
+      .select2 {
+        width: 200px;
+        height: 40px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="select" onmouseover="bj_cover_in(0)"></div>
+    <div class="select2"></div>
+    <div class="select" onmouseover="bj_cover_in(1)"></div>
+    <div class="select2"></div>
+    <div class="select" onmouseover="bj_cover_in(2)"></div>
+    <div class="select2"></div>
+    <div class="select" onmouseover="bj_cover_in(3)"></div>
+    <div class="select2"></div>
+    <div class="select" onmouseover="bj_cover_in(4)"></div>
+    <div class="select2"></div>
+    <script>
+      //ㅡㅡㅡㅡㅡㅡㅡㅡㅡ병진 scriptㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+      //마우스 올릴 때 사라지는 부분
+      let select = document.querySelectorAll(".select");
+      let select2 = document.querySelectorAll(".select2");
+      //기본값
+      let select_index = 0;
+      select[0].style.display = "none";
+      select2[0].style.display = "block";
+
+      function bj_cover_in(index) {
+        select_index = index;
+        select[index].style.display = "none";
+        select2[index].style.display = "block";
+
+        for (let i = 0; i < 5; i++) {
+          if (i != select_index) {
+            select[i].style.display = "block";
+            select2[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

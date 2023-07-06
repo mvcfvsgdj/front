@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차트</title>
+</head>
+
+<style>
+    #mg_chartwrap {
+        overflow-y: hidden;
+        max-height: 416px;
+        height: 416px;
+        width: 276px;
+        border: 1px solid black;
+        position: relative;
+    }
+
+    * {
+        padding: 0px;
+        margin: 0px;
+        
+    }
+   /* 버튼영역 */
+
+   .mg_btn{
+    display: flex
+   }
+   .mg_chart_btn{
+    width: 94px;
+    height: 34px;
+    background-color: white;
+    border: 0px;
+    border-right: 0.5px solid gray;
+    font-weight:100;
+    color: gray;
+    border-top: 0.5px solid rgb(177, 177, 177);
+   }
+   .mg_btn .mg_chart_btn:hover {
+  border-top-color: rgb(30, 255, 0); /* 테두리 윗쪽 색깔 변경 */
+  color: rgb(0, 255, 55); /* 글씨체 색깔 변경 */
+}
+
+    .chart {
+       
+        width: 270px;
+    }
+    .mg_chart_1st{
+        color:rgb(30, 255, 0) ;
+        font-size: 21px;
+    }
+    .mg_chart_2st{
+        font-size: 17px;
+        color: gray;
+
+
+    }
+    .mg_a0 {
+  width: 20%;
+  margin: 0 auto;
+  font-size: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+    .mg_li_1 {
+        border-top: 0.5px solid rgb(177, 177, 177);
+        display: flex;
+   
+        
+    }
+
+    /* 차트텍스트영역 */
+    .mg_a1 {
+        display:flex;
+        
+        width: 80%;
+
+        text-decoration: none;
+        color: black ;
+        text-align: left; 
+    
+ 
+    }
+    .mg_a1:hover .mg_a1_text {
+        display: none;
+    }
+    .mg_a1_text{
+    
+    white-space: nowrap;  /*텍스트 줄바꿈 하지 않음 */   
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width:63%;
+    text-align: center;
+    font-size: 13px;
+
+    }
+    .mgk{
+  
+    }
+  
+
+    .mg_a2 {
+        display: flex;
+        width: 207px;
+        height: 59px;
+        display: none;
+        text-align: justify;
+
+    }
+
+    .mg_a2_img {
+        display: flex;
+        width: 48px;
+        height: 48px;
+        margin-right: 10px;
+    }
+    .mg_a2_text {
+        width: 200px;
+     
+
+    }
+
+    /* 아티스트 / 곡 영역 */
+    .mg_a3 {
+    display: flex;
+        
+   
+   
+    
+    }
+    .mg_a4{
+        
+        margin-left: 10px;
+        padding-left: 20px;
+        float: right;
+    }
+    .mg_song{
+        text-decoration-line: none;
+        color: black;
+
+    }
+    .mg_artist{
+        text-decoration-line: none;
+
+
+    }
+    /* 셔플듣기 더보기 영역*/
+    .mg_chart_fot{
+        position: absolute;
+        bottom: 10px;
+        display: flex;
+        width: 100%;
+        height: 39px;
+    }
+    .mg_chart_for1{
+        width: 50%;
+    }
+    .mg_chart_for2{
+        width: 50%;
+        text-align: right;
+    }
+ 
+    
+</style>
+
+<body>
+
+    <!-- ㅤ <-- 이거 특문입니다 span에 넣어서 참고하세요-->
+
+    <div id="mg_chartwrap">
+        멜론차트 > <br>
+       <div class="mg_btn">
+        <button class="mg_chart_btn" onclick="showChart(1)">TOP100</button>
+        <button class="mg_chart_btn" onclick="showChart(2)">POP</button>
+        <button class="mg_chart_btn" onclick="showChart(3)">☆ 아티스트</button>
+     </div>
+       
+        <ul id="chart1" class="chart" style="list-style: none;">
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>  - 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                   <div class="mg_a1_text " >퀸카(Qunncard)</div> 
+                   <div class="mg_a1_text mgk" >(여자)아이들</div> 
+                   <div class="mg_a2"><div class="mg_a2_img"><img
+                            src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;"></div>퀸카(Qunncard)</a>
+                                <a class="mg_artist" href="139">(여자)아이들</a>
+                                </div>
+                   </div>
+                        
+                    <div class="mg_a3"></div>
+                        </div>
+                </div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_1st"><i>2</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                 <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                 <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_1st"><i>3</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >이브,프시케 그...  </div>
+                    <div class="mg_a1_text mgk">LE SEERA</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">이브,프시케 그...</div></a>
+                                <a class="mg_artist" href="139">LE SEERA</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>4</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >Spicy  </div>
+                    <div class="mg_a1_text mgk">aespa</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">Spicy</div></a>
+                                <a class="mg_artist" href="139">aespa</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>5</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >헤어지자 말해요 </div>
+                    <div class="mg_a1_text mgk">박재정</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">헤어지자 말해요</div></a>
+                                <a class="mg_artist" href="139">박재정</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>6</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >Kitsch  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div>  
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">Kitsch</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>7</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >사랑은 늘 도망가  </div>
+                    <div class="mg_a1_text mgk">임영웅</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">사랑은 늘 도망가</div></a>
+                                <a class="mg_artist" href="139">임영웅</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>8</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >Hype boy  </div>
+                    <div class="mg_a1_text mgk">NewJeans</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">Hype boy</div></a>
+                                <a class="mg_artist" href="139">NewJeans</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>9</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>10</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+
+        </ul>
+
+        <ul id="chart2" class="chart" style="display: none;">
+            <!-- 차트 2의 내용 -->
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>  - 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                   <div class="mg_a1_text " >퀸카(Qunncard)</div> 
+                   <div class="mg_a1_text mgk" >여자아이들</div> 
+                    <div class="mg_a2"><div class="mg_a2_img"><img
+                            src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                </div>
+                        </div>
+                        
+                    <div class="mg_a3"></div>
+                        </div>
+                </div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_1st"><i>2</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                 <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                 <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_1st"><i>3</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >이브,프시케 그...  </div>
+                    <div class="mg_a1_text mgk">LE SEERA</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>4</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>5</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>6</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div>  
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>7</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>8</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>9</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>10</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+        </ul>
+
+        <ul id="chart3" class="chart" style="display: none;">
+            <!-- 차트 3의 내용 -->
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a>  - 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                   <div class="mg_a1_text " >퀸카(Qunncard)</div> 
+                   <div class="mg_a1_text mgk" >여자아이들</div> 
+                    <div class="mg_a2"><div class="mg_a2_img"><img
+                            src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                </div>
+                        </div>
+                        
+                    <div class="mg_a3"></div>
+                        </div>
+                </div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_1st"><i>2</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                 <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                 <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_1st"><i>3</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >이브,프시케 그...  </div>
+                    <div class="mg_a1_text mgk">LE SEERA</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>4</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>5</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>6</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div>  
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>7</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>8</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>9</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <div class="mg_a0"><a class="mg_chart_2st"><i>10</i></a>- 0</div>
+                <div  class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <div class="mg_a1_text " >I AM  </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div> 
+                     <div class="mg_a2"><div class="mg_a2_img"><img
+                             src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                             <div class="mg_a2_text">
+                                <a class="mg_song" href="429"><div style="width: 100px;">I AM</div></a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                                 </div>
+                         </div>
+                         
+                     <div class="mg_a3"></div>
+            </li>
+
+
+        </ul>
+        <div class="mg_chart_fot">
+            <div class="mg_chart_for1"><button>셔플듣기</button>
+            </div><div class="mg_chart_for2"><a href="">더보기></a></div>
+        </div>
+    </div>
+
+    <script>
+        let currentChart = 1;
+        let totalCharts = 3; // 전체 차트 개수
+
+        function showChart(chartNumber) {
+            let chartWrapper = document.getElementById('mg_chartwrap');
+
+            // 모든 차트 숨기기
+            let charts = chartWrapper.querySelectorAll('.chart');
+            charts.forEach(chart => {
+                chart.style.display = 'none';
+            });
+
+            // 선택한 차트 보여주기
+            let targetChart = document.getElementById("chart" + chartNumber);
+            targetChart.style.display = 'block';
+
+            currentChart = chartNumber;
+        }
+
+        // 마우스로 생략된 내용 표시
+        let mg_select = 0;
+        
+    
+        function showList(event,index) {
+
+             mg_select = index;
+     
+            
+            let mg_li = event.target.closest('.mg_li_1');
+            let mg_image = mg_li.querySelector('.mg_a2');
+            let mg_text = mg_li.querySelector('.mg_a3');
+            let mg_song = mg_li.querySelector('.mg_song');
+            
+           
+            mg_text.style.display = "none";
+            mg_image.style.display = "block";
+            
+            mg_song.style.overflow = "ellipsis";
+
+           
+           
+
+        }
+        // 마우스 숨기기
+        function hideList(event) {
+            let mg_li = event.target.closest('.mg_li_1'); //target 속성은 링크된 문서를 클릭했을 때 문서가 열릴 위치 .closest 속성은 가장 가까운 걸 찾음
+            let mg_image = mg_li.querySelector('.mg_a2');
+            let mg_text = mg_li.querySelector('.mg_a3');
+            mg_text.style.display = "block";
+           mg_image.style.display = "none";
+           mg_text.style.whiteSpace = "nowrap";
+
+        }
+        // 초기에는 차트 1 보여주기
+
+        
+        showChart(1);
+
+    </script>
+</body>
+
+</html>
