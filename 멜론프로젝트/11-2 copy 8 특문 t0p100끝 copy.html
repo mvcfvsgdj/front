@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차트</title>
+</head>
+
+<style>
+    #mg_chartwrap {
+        overflow-y: hidden;
+        max-height: 416px;
+        height: 416px;
+        width: 276px;
+        border: 1px solid black;
+        position: relative;
+    }
+
+    * {
+        padding: 0px;
+        margin: 0px;
+
+    }
+
+    /* 버튼영역 */
+
+    .mg_btn {
+        display: flex
+    }
+
+    .mg_chart_btn {
+        width: 94px;
+        height: 34px;
+        background-color: white;
+        border: 0px;
+        border-right: 0.5px solid gray;
+        font-weight: 100;
+        color: gray;
+        border-top: 0.5px solid rgb(177, 177, 177);
+    }
+
+    .mg_btn .mg_chart_btn:hover {
+        border-top-color: #8ac121;
+        /* 테두리 윗쪽 색깔 변경 */
+        color: #8ac121;
+        /* 글씨체 색깔 변경 */
+        border-top: 3px solid #8ac121;
+        /* 테두리 윗쪽 굵기 변경 */
+    }
+
+    .chart {
+
+        width: 270px;
+    }
+
+    .mg_chart_1st {
+        color: #8ac121;
+        font-size: 21px;
+    }
+
+    .mg_chart_2st {
+        font-size: 17px;
+        color: gray;
+
+
+    }
+
+    .mg_a0 {
+        width: 20%;
+        margin: 0 auto;
+        font-size: 5px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+
+    .mg_li_1 {
+        border-top: 0.5px solid rgb(177, 177, 177);
+        display: flex;
+
+
+    }
+
+    /* 차트텍스트영역 */
+    .mg_a1 {
+        display: flex;
+
+        width: 80%;
+
+        text-decoration: none;
+        color: black;
+        text-align: left;
+
+
+    }
+
+    .mg_a1:hover .mg_a1_text {
+        /*차트영역 숨기기 */
+        display: none;
+    }
+
+    .mg_a1_text {
+
+        white-space: nowrap;
+        /*텍스트 줄바꿈 하지 않음 */
+        overflow: hidden;
+        /*텍스트넘어가면 숨김 */
+        text-overflow: ellipsis;
+        /* ... */
+        width: 63%;
+        text-align: center;
+        font-size: 13px;
+
+    }
+
+
+    /*마우스 호버시 보일 영역*/
+    .mg_a2 {
+        display: flex;
+        width: 207px;
+        height: 59px;
+        display: none;
+        text-align: justify;
+
+    }
+
+    .mg_a2_img {
+        display: flex;
+        width: 48px;
+        height: 48px;
+        margin-top: 5px;
+
+    }
+
+    .mg_a2_text {
+        margin-left: 10px;
+        width: 200px;
+        font-size: 14px;
+
+
+    }
+
+    /* 아티스트 / 곡 영역 */
+    .mg_a3 {
+        display: flex;
+
+
+
+
+    }
+
+    .mg_a4 {
+
+        margin-left: 10px;
+        padding-left: 20px;
+        float: right;
+    }
+
+    .mg_song {
+        text-decoration-line: none;
+        color: black;
+
+    }
+
+    .mg_artist {
+        text-decoration-line: none;
+        color: gray;
+
+
+    }
+
+    /* 셔플듣기 더보기 영역*/
+    .mg_chart_fot {
+        position: absolute;
+        bottom: 10px;
+        display: flex;
+        width: 100%;
+        height: 39px;
+    }
+
+    .mg_chart_for1 {
+        width: 50%;
+    }
+
+    .mg_chart_for2 {
+        width: 50%;
+        text-align: right;
+    }
+</style>
+
+<body>
+
+    <!-- ㅤ <-- 이거 특문입니다 span에 넣어서 참고하세요-->
+
+    <div id="mg_chartwrap"> <!--차트 시작부분-->
+        멜론차트 > <br>
+        <div class="mg_btn"><!--showChart : 버튼 누르면 다음 차트로 넘어갑니다-->
+            <button class="mg_chart_btn" onclick="showChart(1)">TOP100</button>
+            <button class="mg_chart_btn" onclick="showChart(2)">POP</button>
+            <button class="mg_chart_btn" onclick="showChart(3)">☆ 아티스트</button>
+        </div>
+
+        <ul id="chart1" class="chart" style="list-style: none;">
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a> - 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">퀸카(Qunncard)</div>
+                    <div class="mg_a1_text mgk">(여자)아이들</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/112/40/232/11240232_20230509151820_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="https://www.melon.com/album/detail.htm?albumId=11240232">
+                                    <div style="width: 100px;"></div>퀸카(Qunncard)
+                                </a>
+                                <a class="mg_artist"
+                                    href="https://www.melon.com/artist/timeline.htm?artistId=2137482">(여자)아이들</a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="mg_li_1 ">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_1st"><i>2</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">;; </div>
+                    <div class="mg_a1_text mgk">유자</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/112/76/855/11276855_20230630114456_1000.jpg?8e2028839479c5453ea79ad42b431f5e/melon/quality/80/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="429">
+                                    <div style="width: 100px;">;;</div>
+                                </a>
+                                <a class="mg_artist" href="139">유자</a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_1st"><i>3</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">이브, 프시케 그리고 푸른 수염의 아내 </div>
+                    <div class="mg_a1_text mgk">LE SSERAFIM</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/112/34/678/11234678_20230502162327_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="429">
+                                    <div style="width: 100px;">이브, 프시케 그리...</div>
+                                </a>
+                                <a class="mg_artist" href="139">LE SSERAFIM</a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>4</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">Spicy </div>
+                    <div class="mg_a1_text mgk">aespa</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/112/36/264/11236264_20230508184331_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="429">
+                                    <div style="width: 100px;">Spicy</div>
+                                </a>
+                                <a class="mg_artist" href="139">aespa</a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>5</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">헤어지자 말해요 </div>
+                    <div class="mg_a1_text mgk">박재정</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/112/27/533/11227533_20230419162238_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="429">
+                                    <div style="width: 100px;">헤어지자 말...</div>
+                                </a>
+                                <a class="mg_artist" href="139">박재정</a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>6</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">Kitsch </div>
+                    <div class="mg_a1_text mgk">IVE(아이브)</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/112/11/297/11211297_20230410151046_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="429">
+                                    <div style="width: 100px;">Kitsch</div>
+                                </a>
+                                <a class="mg_artist" href="139">IVE (아이브)</a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>7</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">사랑은 늘 도망가 </div>
+                    <div class="mg_a1_text mgk">임영웅</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/107/35/654/10735654_20211008114339_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="429">
+                                    <div style="width: 100px;">사랑은 늘 도...</div>
+                                </a>
+                                <a class="mg_artist" href="139">임영웅</a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>8</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">Hype boy </div>
+                    <div class="mg_a1_text mgk">NewJeans</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/110/11/565/11011565_20220801102637_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="429">
+                                    <div style="width: 100px;">Hype boy</div>
+                                </a>
+                                <a class="mg_artist" href="139">NewJeans</a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>9</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">모래알갱이 </div>
+                    <div class="mg_a1_text mgk">임영웅</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/112/58/233/11258233_20230605094802_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="429">
+                                    <div style="width: 100px;">모래알갱이</div>
+                                </a>
+                                <a class="mg_artist" href="139">임영웅</a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>10</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">UNFOGIVEN </div>
+                    <div class="mg_a1_text mgk">LE SSERAFIM</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/112/34/678/11234678_20230502162327_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="429">
+                                    <div style="width: 100px;">UNFOGIVEN </div>
+                                </a>
+                                <a class="mg_artist" href="139">LE SSERAFIM</a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+
+        </ul>
+        <!-- pop 차트의 내용 -->
+        <ul id="chart2" class="chart" style="display: none;">
+
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a> - 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">I Don't Think That I Like Her</div>
+                    <div class="mg_a1_text mgk">Charlie Puth</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/108/44/485/10844485_20221006154824_500.jpg/melon/resize/120/quality/80/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="https://www.melon.com/album/detail.htm?albumId=10844485">
+                                    <div style="width: 100px;">I Don't Thin...</div>
+                                    
+                                </a>
+                                <a class="mg_artist"
+                                    href="https://www.melon.com/artist/timeline.htm?artistId=838654">
+                                    Charlie Puth
+                                </a>
+                                </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_1st"><i>2</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">Dangerously </div>
+                    <div class="mg_a1_text mgk">Charlie Puth</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm/album/images/023/36/926/2336926_500.jpg/melon/resize/120/quality/80/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="429">
+                                    <div style="width: 100px;">
+                                        Dangerously
+                                    </div>
+                                </a>
+                                <a class="mg_artist"  href="https://www.melon.com/artist/timeline.htm?artistId=838654">
+                                    Charlie Puth
+                                </a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_1st"><i>3</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">Steal The Show (From “엘리멘탈) </div>
+                    <div class="mg_a1_text mgk">Lauv</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/112/54/858/11254858_20230531233847_500.jpg/melon/resize/120/quality/80/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="https://www.melon.com/album/detail.htm?albumId=11254858">
+                                    <div style="width: 100px;">
+                                        Steal The Sho...
+                                    </div>
+                                </a>
+                                <a class="mg_artist" href="https://www.melon.com/artist/timeline.htm?artistId=1956543">
+                                    Lauv
+                                </a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>4</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">NIGHT DANCER </div>
+                    <div class="mg_a1_text mgk">imase</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/110/31/616/11031616_20220817122214_500.jpg/melon/resize/120/quality/80/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="https://www.melon.com/album/detail.htm?albumId=11031616">
+                                    <div style="width: 100px;">
+                                        NIGHT DAN...
+                                    </div>
+                                </a>
+                                <a class="mg_artist" href="https://www.melon.com/artist/timeline.htm?artistId=3060228">
+                                    imase
+                                </a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>5</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">That's Hilarious </div>
+                    <div class="mg_a1_text mgk">Charlie Puth</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/108/44/485/10844485_20221006154824_500.jpg/melon/resize/120/quality/80/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="https://www.melon.com/album/detail.htm?albumId=10844485">
+                                    <div style="width: 100px;">
+
+                                        That's Hilarious
+
+                                    </div>
+                                </a>
+                                <a class="mg_artist" href="https://www.melon.com/artist/timeline.htm?artistId=838654">
+                                  
+                                    Charlie Puth
+
+                                </a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>6</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">STAY </div>
+                    <div class="mg_a1_text mgk">The Kid LAROI, Justin Bieber</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/106/46/395/10646395_20210707141710_500.jpg/melon/resize/120/quality/80/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="https://www.melon.com/album/detail.htm?albumId=10646395">
+                                    <div style="width: 100px;">
+
+                                        STAY
+                                    </div>
+                                </a>
+                                <a class="mg_artist" href="https://www.melon.com/artist/timeline.htm?artistId=2743730">
+                                    
+                                    The Kid LAROI, Justin Bieber
+                                </a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>7</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">Off My Face </div>
+                    <div class="mg_a1_text mgk"> Justin Bieber</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/105/80/103/10580103_20211008114642_500.jpg/melon/resize/120/quality/80/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="https://www.melon.com/album/detail.htm?albumId=10580103">
+                                    <div style="width: 100px;">
+                                        Off My Face
+                                    </div>
+                                </a>
+                                <a class="mg_artist" href="https://www.melon.com/artist/timeline.htm?artistId=420621">
+                                    Justin Bieber
+                                </a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>8</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">アイドル </div>
+                    <div class="mg_a1_text mgk">YOASOBI</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/album/images/112/20/338/11220338_20230407224115_500.jpg/melon/resize/120/quality/80/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="https://www.melon.com/album/detail.htm?albumId=11220338">
+                                    <div style="width: 100px;">アイドル</div>
+                                </a>
+                                <a class="mg_artist" href="https://www.melon.com/artist/timeline.htm?artistId=2871809">YOASOBI</a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>9</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">愛を伝えたいだとか / Ai Wo </div>
+                    <div class="mg_a1_text mgk">aimyon</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm/album/images/100/96/397/10096397_500.jpg/melon/resize/120/quality/80/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="https://www.melon.com/album/detail.htm?albumId=10096397">
+                                    <div style="width: 100px;">愛を伝えたい... </div>
+                                </a>
+                                <a class="mg_artist" href="https://www.melon.com/artist/timeline.htm?artistId=1625441">aimyon</a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>10</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">12:45 (Stripped) </div>
+                    <div class="mg_a1_text mgk">Etham</div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm/album/images/102/35/362/10235362_500.jpg/melon/resize/120/quality/80/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <a class="mg_song" href="https://www.melon.com/album/detail.htm?albumId=10235362">
+                                    <div style="width: 100px;">12:45 (Str... </div>
+                                </a>
+                                <a class="mg_artist" href="https://www.melon.com/artist/timeline.htm?artistId=1907334">Etham</a>
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+
+            </li>
+        </ul>
+        <!-- 차트 3의 내용 -->
+        <ul id="chart3" class="chart" style="display: none;">
+
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_1st"><i>1</i></a> - 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">방탄소년단</div>
+                    <div class="mg_a1_text mgk"></div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/006/72/375/672375_20230615142615_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <br>
+                                <a class="mg_song" href="https://www.melon.com/artist/timeline.htm?artistId=672375">
+                                    <div style="width: 100px;">방탄소년단</div>
+                                </a>
+
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_1st"><i>2</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">IVE (아이브)</div>
+                    <div class="mg_a1_text mgk"></div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/030/55/146/3055146_20230410142647_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <br>
+                                <a class="mg_song" href="https://www.melon.com/artist/timeline.htm?artistId=3055146">
+                                    <div style="width: 100px;">IVE (아이브)</div>
+                                </a>
+
+                            </div>
+                        </div>
+                       <!--이거 빼면 함수 작동 안합니다-->
+                       <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_1st"><i>3</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">LE SSERAFIM </div>
+                    <div class="mg_a1_text mgk"></div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/030/92/950/3092950_20230428172731_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <br>
+                                <a class="mg_song" href="https://www.melon.com/artist/timeline.htm?artistId=3092950">
+                                    <div style="width: 100px;">LE SSERAFIM</div>
+                                </a>
+
+                            </div>
+                        </div>
+                       <!--이거 빼면 함수 작동 안합니다-->
+                       <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>4</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">임영웅</div>
+                    <div class="mg_a1_text mgk"></div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/009/94/944/994944_20230605114643_500.jpg?b6bf522bb7e1a2b2b4d516c7b6e9287d/melon/resize/416/quality/80/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <br>
+                                <a class="mg_song" href="https://www.melon.com/artist/timeline.htm?artistId=994944">
+                                    <div style="width: 100px;">임영웅</div>
+                                </a>
+
+                            </div>
+                        </div>
+                       <!--이거 빼면 함수 작동 안합니다-->
+                       <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>5</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">NewJeans</div>
+                    <div class="mg_a1_text mgk"></div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/031/14/174/3114174_20230102131651_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <br>
+                                <a class="mg_song" href="https://www.melon.com/artist/timeline.htm?artistId=3114174">
+                                    <div style="width: 100px;">NewJeans</div>
+                                </a>
+
+                            </div>
+                        </div>
+                      <!--이거 빼면 함수 작동 안합니다-->
+                      <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>6</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">빈지노 (Beenzino)</div>
+                    <div class="mg_a1_text mgk"></div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/005/32/029/532029_20230620101729_500.jpg?38f75782b81683f20f093ff1bee308ab/melon/resize/416/quality/80/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <br>
+                                <a class="mg_song" href="https://www.melon.com/artist/timeline.htm?artistId=532029">
+                                    <div style="width: 100px;">빈지노 (Been..</div>
+                                </a>
+
+                            </div>
+                       <!--이거 빼면 함수 작동 안합니다-->
+                       <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>7</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">볼빨간사춘기</div>
+                    <div class="mg_a1_text mgk"></div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/007/92/022/792022_20230414141834_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <br>
+                                <a class="mg_song" href="https://www.melon.com/artist/timeline.htm?artistId=792022">
+                                    <div style="width: 100px;">볼빨간사춘기</div>
+                                </a>
+
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>8</i></a>- 0</div>
+                <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">투모로우바이투게더</div>
+                    <div class="mg_a1_text mgk"></div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/026/32/253/2632253_20230127105406_500.jpg?4648368665e39c2ae2dadeb385b8b9c4/melon/resize/416/quality/80/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <br>
+                                <a class="mg_song" href="https://www.melon.com/artist/timeline.htm?artistId=2632253">
+                                    <div style="width: 100px;">투모로우바...</div>
+                                </a>
+
+                            </div>
+                        </div>
+                        <!--이거 빼면 함수 작동 안합니다-->
+                        <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>9</i></a>- 0</div>
+                               <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                               <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                                <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                                <div class="mg_a1_text ">세븐틴 (SEVENTEEN)</div>
+                                <div class="mg_a1_text mgk"></div>
+                                
+                                <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                                <div class="mg_a2">
+                                    <div class="mg_a2_img"><img
+                                            src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/008/61/436/861436_20230424120015_500.jpg/melon/quality/80/resize/48/optimize">
+                                        <div class="mg_a2_text">
+                                            <!--div 크기 건드리면 함수 고장납니다 -->
+                                            <br>
+                                            <a class="mg_song" href="https://www.melon.com/artist/timeline.htm?artistId=861436">
+                                                <div style="width: 100px;">세븐틴 (SEVE...</div>
+                                            </a>
+                                            
+                                        </div>
+                                       
+                                    </div>
+                                   
+                                    <!--이거 빼면 함수 작동 안합니다-->
+                                    <div class="mg_a3"></div>
+            </li>
+            <li class="mg_li_1">
+                <!--순위영역 -->
+                <div class="mg_a0"><a class="mg_chart_2st"><i>10</i></a>- 0</div>
+                 <!--마우스 호버시 이미지랑 링크 불러오는 함수 : showList , hideList -->
+                 <div class="mg_a1" onmouseover="showList(event)" onmouseout="hideList(event)">
+                    <!--마우스 호버 전 보이는 곡이름/아티스트-->
+                    <div class="mg_a1_text ">(여자)아이들</div>
+                    
+                    <div class="mg_a1_text mgk"></div>
+                    <!--마우스 호버 하면 보이는 이미지랑 곡/아티스트 링크-->
+                    <div class="mg_a2">
+                        
+                        <div class="mg_a2_img"><img
+                                src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/021/37/482/2137482_20230502151359_500.jpg/melon/quality/80/resize/48/optimize">
+                            <div class="mg_a2_text">
+                                <!--div 크기 건드리면 함수 고장납니다 -->
+                                <br>
+                                <a class="mg_song" href="https://www.melon.com/artist/timeline.htm?artistId=2137482">
+                                    <div style="width: 100px;">여자아이들</div>
+                                </a>
+                                
+                            </div>
+                    </div>
+                
+                        <!--이거 빼면 함수 작동 안합니다-->
+                    <div class="mg_a3"></div>
+            </li>
+
+
+        </ul>
+        <div class="mg_chart_fot">
+            <div class="mg_chart_for1"><button>셔플듣기</button>
+            </div>
+            <div class="mg_chart_for2"><a href="">더보기></a></div>
+        </div>
+    </div>
+
+    <script>
+        let currentChart = 1;
+        let totalCharts = 3; // 전체 차트 개수
+
+        function showChart(chartNumber) {
+            let chartWrapper = document.getElementById('mg_chartwrap');
+
+            // 모든 차트 숨기기
+            let charts = chartWrapper.querySelectorAll('.chart');
+            charts.forEach(chart => {
+                chart.style.display = 'none';
+            });
+
+            // 선택한 차트 보여주기
+            let targetChart = document.getElementById("chart" + chartNumber);
+            targetChart.style.display = 'block';
+
+            currentChart = chartNumber;
+        }
+
+        // 마우스로 생략된 내용 표시
+        let mg_select = 0;
+
+
+        function showList(event, index) {
+
+
+
+            //target 속성은 링크된 문서를 클릭했을 때 문서가 열릴 위치 .closest 속성은 가장 가까운 걸 찾음
+            let mg_li = event.target.closest('.mg_li_1');
+            let mg_image = mg_li.querySelector('.mg_a2');
+            let mg_text = mg_li.querySelector('.mg_a3');
+            let mg_song = mg_li.querySelector('.mg_song');
+
+
+            mg_text.style.display = "none";
+            mg_image.style.display = "block";
+
+            mg_song.style.overflow = "ellipsis";
+
+
+
+
+        }
+        // 마우스 숨기기
+        function hideList(event) {
+
+            //target 속성은 링크된 문서를 클릭했을 때 문서가 열릴 위치 .closest 속성은 가장 가까운 걸 찾음
+            let mg_li = event.target.closest('.mg_li_1');
+            let mg_image = mg_li.querySelector('.mg_a2');
+            let mg_text = mg_li.querySelector('.mg_a3');
+            mg_text.style.display = "block";
+            mg_image.style.display = "none";
+            mg_text.style.whiteSpace = "nowrap";
+
+        }
+        // 초기에는 차트 1 보여주기
+
+
+        showChart(1);
+
+    </script>
+</body>
+
+</html>
